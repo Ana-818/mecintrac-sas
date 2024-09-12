@@ -1,0 +1,42 @@
+---
+const { url, name } = Astro.props;
+
+interface Props {
+  url: string;
+  name: string;
+}
+---
+
+<a
+  id={url === "/" ? "inicio" : url.replace("/", "")}
+  href={url}
+  data-astro-prefetch
+  class="text-base font-medium text-neutral-600 outline-none hover:text-neutral-500 md:py-3 md:text-sm 2xl:text-base"
+>
+  {name}
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let url = window.location.pathname;
+    let urlSegments = url.split("/");
+    let navId;
+
+    if (url === "/") {
+      navId = "inicio";
+    } else {
+      navId = url.replace("/", "");
+    }
+
+    let nav = document.getElementById(navId);
+
+    if (nav) {
+      nav.classList.remove(
+        "text-neutral-600",
+        "hover:text-neutral-500",
+      );
+      nav.classList.add("text-blue");
+      nav.setAttribute("aria-current", "page");
+    }
+  });
+</script>
