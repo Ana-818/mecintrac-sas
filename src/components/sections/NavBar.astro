@@ -2,31 +2,22 @@
 //Import relevant dependencies
 import NavLink from "@components/ui/NavLink.astro";
 import Strings from "@data/navigation.ts";
+import "@/assets/styles/global.css";
 ---
 
 <!-- Main header component -->
 <header
-  class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
->
+  class="fixed inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start section-container">
   <!-- Navigation container -->
   <nav
     class="relative mx-2 w-full rounded-[36px] border border-white/40 bg-white/60 px-4 py-3 backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
-    aria-label="Global"
-  >
+    aria-label="Global">
     <div class="flex items-center justify-between">
       <!-- Brand logo -->
-      <a href="/" class="flex items-center space-x-2">
+      <a href="/" class="absolute left-3 flex items-center space-x-2">
         <!-- Your SVG Icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-blue-600"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10" />
           <path d="M14.31 8l5.74 9.94M9.69 8l-5.74 9.94" />
           <line x1="12" y1="2" x2="12" y2="22" />
@@ -36,39 +27,21 @@ import Strings from "@data/navigation.ts";
       </a>
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
-        <button
-          type="button"
+        <button type="button"
           class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50"
-          data-hs-collapse="#navbar-collapse-with-animation"
-          aria-controls="navbar-collapse-with-animation"
+          data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
-        >
-          <svg
-            class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+          id="show-btn">
+          <svg class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <line x1="3" x2="21" y1="6" y2="6"></line>
             <line x1="3" x2="21" y1="12" y2="12"></line>
             <line x1="3" x2="21" y1="18" y2="18"></line>
           </svg>
-          <svg
-            class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+          <svg class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M18 6 6 18"></path>
             <path d="m6 6 12 12"></path>
           </svg>
@@ -76,25 +49,47 @@ import Strings from "@data/navigation.ts";
       </div>
     </div>
     <!-- Contains navigation links -->
-    <div
-      id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
-    >
+    <div id="navbar-collapse-with-animation"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block">
       <!-- Navigation links container -->
       <div
-        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:w-full md:flex-row md:items-center md:justify-center md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7"
-      >
+        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:w-full md:flex-row md:items-center md:justify-center md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7">
         <!-- Navigation links and Authentication component -->
         {Strings.navBarLinks.map(link => (
-          <NavLink url={link.url} name={link.name} />
+        <NavLink url={link.url} name={link.name} />
         ))}
       </div>
     </div>
   </nav>
 </header>
 
-<!-- Import the necessary Collapse and Overlay plugins -->
+<!-- Import preline and handle dismiss-->
 <script>
   import "@node/preline/dist/preline.js";
-</script>
+  document.addEventListener("DOMContentLoaded", function() {
+    function closeCollapse() {
+      const collapse = document.getElementById('navbar-collapse-with-animation');
+      const toggleButton = document.getElementById('show-btn');
+      
+      if (collapse!.classList.contains('open')) {
+        (toggleButton as HTMLElement)!.click();
+      }
+    }
 
+      document.addEventListener('click', function(event) {
+      const collapse = document.getElementById('navbar-collapse-with-animation');
+      const toggleButton = document.getElementById('show-btn');
+      
+      if (!collapse!.contains(event.target as Node) && !toggleButton!.contains(event.target as Node)) {
+        console.log('Clicked outside');
+        closeCollapse();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCollapse();
+      }
+    });
+  });
+</script>

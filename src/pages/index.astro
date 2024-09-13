@@ -1,19 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import NavLink from "@/components/ui/NavLink.astro"
+import Hero from "@components/sections/landing/Hero.astro"
 ---
 
 <Layout title="Mecintrac">
-  <div class="flex flex-col items-center justify-center h-screen">
-	<h1 class="text-4xl font-bold text-center text-primary-500 dark:text-primary-400">
-	  Welcome to Astro!
-	</h1>
-	<p class="mt-4 text-lg text-center text-neutral-600 dark:text-neutral-400">
-	  Get started by editing{" "}
-	  <code class="text-neutral-700 dark:text-neutral-300">src/pages/index.astro</code>
-	</p>
-	<div class="mt-8 space-x-4">
-	  <NavLink url="/docs" name="Documentation" />
-	  <NavLink url="/blog" name="Blog" />
-	</div>
-  </div>
+	
+	<Hero slot={"no-margin"}/>
+  
+	<!-- Constrained-width sections -->
+	<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-12">
+	  <h2 class="text-3xl font-semibold">About Us</h2>
+	  <p class="mt-4">Here is some information about Mecintrac.</p>
+	</section>
+  
+	<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-12">
+	  <h2 class="text-3xl font-semibold">Our Services</h2>
+	  <p class="mt-4">Details about our services.</p>
+	</section>
+</Layout>

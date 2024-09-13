@@ -11,7 +11,7 @@ interface Props {
   id={url === "/" ? "inicio" : url.replace("/", "")}
   href={url}
   data-astro-prefetch
-  class="text-base font-medium text-neutral-600 outline-none hover:text-neutral-500 md:py-3 md:text-sm 2xl:text-base"
+  class="text-base font-medium text-black outline-none hover:text-neutral-500 md:py-3 md:text-sm 2xl:text-base"
 >
   {name}
 </a>
@@ -32,7 +32,7 @@ interface Props {
 
     if (nav) {
       nav.classList.remove(
-        "text-neutral-600",
+        "text-black",
         "hover:text-neutral-500",
       );
       nav.classList.add("text-blue");
