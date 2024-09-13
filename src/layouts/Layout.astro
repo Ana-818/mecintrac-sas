@@ -22,9 +22,10 @@ const { title } = Astro.props;
   <body class="bg-background overflow-x-hidden">
     <Navbar />
     <main class="h-full">
-      <slot name="no-margin"></slot> <!-- For full width sections -->
+      <slot name="no-margin"></slot>
+      
       <div class="section-container">
-        <slot /> <!-- For the rest of the content -->
+        <slot /> 
       </div>
     </main>
     <FooterSection />
