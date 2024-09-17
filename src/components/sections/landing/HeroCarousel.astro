@@ -1,0 +1,58 @@
+---
+import HeroSlides from '@data/heroSlides';
+import { Image } from 'astro:assets';
+
+const slides = HeroSlides;
+---
+<!-- FIX: Image is not optimized. Missing next and prev buttons. Refactor tailwind css code-->
+<section class="relative w-full min-h-[500px] h-screen max-h-[1500px] overflow-hidden">
+  <div class="carousel-container w-full h-full flex">
+    {slides.map((slide, index) => (
+      <div class="flex-shrink-0 w-full h-full bg-cover bg-center relative">
+        <Image
+          src={slide.bgImage}
+          alt={slide.title}
+          class="absolute inset-0 w-full h-full object-cover z-[-1]"
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          width={1920}
+          height={1080}
+        />
+        <div class="flex flex-col items-start justify-center section-container h-full absolute inset-0 bg-black bg-opacity-50 p-8">
+          <h1 class="text-[3.5rem] leading-[0.8] text-white">
+            {slide.title}
+          </h1>
+          <p class="text-white mt-4 max-w-2xl">
+            {slide.description}
+          </p>
+          <button class="bg-white text-green-700 font-semibold py-2 px-4 rounded shadow-lg mt-6">
+            {slide.ctaText}
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentSlide = 0;
+    const slideCount = document.querySelectorAll('.carousel-container > div').length;
+    
+    function startCarousel() {
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slideCount;
+        updateSlide();
+      }, 5000); // Slide every 5 seconds
+    }
+
+    function updateSlide() {
+      const container = document.querySelector('.carousel-container') as HTMLElement;
+      if (container) {
+        container.style.transition = 'transform 0.5s ease-in-out';
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+    }
+
+    startCarousel();
+  });
+</script>

@@ -26,11 +26,12 @@
       "@utils/*": [
         "src/utils/*"
       ],
+      "@images/*": [
+        "src/images/*"
+      ],
       "@node/*": [
         "node_modules/*"
       ]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
   }
 }
