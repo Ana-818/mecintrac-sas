@@ -1,11 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import Hero from "@components/sections/landing/Hero.astro"
+import HeroCarousel from "@components/sections/landing/HeroCarousel.jsx"
 ---
 
 <Layout title="Mecintrac">
 	
-	<Hero slot={"no-margin"}/>
+	<HeroCarousel slot={"no-margin"} client:load/>
   
 	<section class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-12">
 	  <h2 class="text-3xl font-semibold">About Us</h2>
@@ -17,3 +17,4 @@ import Hero from "@components/sections/landing/Hero.astro"
 	  <p class="mt-4">Details about our services.</p>
 	</section>
 </Layout>
+r

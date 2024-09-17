@@ -5,14 +5,32 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@content/*": ["src/content/*"],
-      "@data/*": ["src/data/*"],
-      "@scripts/*": ["src/assets/scripts/*"],
-      "@styles/*": ["src/assets/styles/*"],
-      "@utils/*": ["src/utils/*"],
-      "@node/*": ["node_modules/*"]
-    }
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@content/*": [
+        "src/content/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@scripts/*": [
+        "src/assets/scripts/*"
+      ],
+      "@styles/*": [
+        "src/assets/styles/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@node/*": [
+        "node_modules/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
