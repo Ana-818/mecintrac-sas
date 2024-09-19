@@ -7,11 +7,11 @@
     "url": "/contacto"
   },
   {
-    "title": "Innovación en Ingeniería",
-    "description": "Ofrecemos soluciones de alta calidad para la industria metalmecánica.",
-    "ctaText": "Nuestros Servicios",
+    "title": "CALIDAD A TIEMPO",
+    "description": "En Mecintrac, ofrecemos soluciones con un firme compromiso con la calidad y la puntualidad. Nos enfocamos en entregar resultados confiables y a tiempo en cada proyecto.",
+    "ctaText": "Nuestros proyectos",
     "bgImage": "/src/assets/images/hero/hero-slide-2.jpg",
-    "url": "/servicios"
+    "url": "/proyectos"
   },
   { 
     "title": "Experiencia y Calidad",
