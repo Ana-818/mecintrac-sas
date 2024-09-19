@@ -45,6 +45,10 @@ export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg}
     const slideCount = document.querySelectorAll('.carousel-container > div').length;
     let carouselInterval: ReturnType<typeof setInterval>;
 
+    // Variables to track touch positions
+    let startX = 0;
+    let endX = 0;
+
     function startCarousel() {
       carouselInterval = setInterval(() => {
         nextSlide();
@@ -81,6 +85,27 @@ export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg}
     document.getElementById('prevBtn')?.addEventListener('click', () => {
       prevSlide();
       resetCarousel();
+    });
+
+    // Touch event listeners for swipe gestures
+    const carouselContainer = document.querySelector('.carousel-container') as HTMLElement;
+
+    carouselContainer.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carouselContainer.addEventListener('touchmove', (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    carouselContainer.addEventListener('touchend', () => {
+      if (startX > endX + 50) {
+        nextSlide();
+        resetCarousel();
+      } else if (startX < endX - 50) {
+        prevSlide();
+        resetCarousel();
+      }
     });
 
     startCarousel();
