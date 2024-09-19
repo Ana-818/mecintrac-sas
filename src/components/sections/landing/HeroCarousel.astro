@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components'
 export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
 ---
-<section class="relative w-full min-h-[700px] h-screen max-h-[1500px] overflow-hidden">
+<section class="relative w-full min-h-[700px] h-screen max-h-[1500px] overflow-hidden section-container-no-margin">
   <div class="carousel-container w-full h-full flex transition-transform duration-500 ease-in-out">
     {Slides.map((slide, index) => (
       <div class="flex-shrink-0 w-full h-full relative bg-black bg-opacity-50">
