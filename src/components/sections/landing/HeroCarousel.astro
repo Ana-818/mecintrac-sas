@@ -1,56 +1,87 @@
 ---
 import Slides from '@data/heroSlides.json';
+import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
 export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
 ---
-<!-- FIX: Image is not optimized. Missing next and prev buttons. Refactor tailwind css code-->
 <section class="relative w-full min-h-[700px] h-screen max-h-[1500px] overflow-hidden">
-  <div class="carousel-container w-full h-full flex">
+  <div class="carousel-container w-full h-full flex transition-transform duration-500 ease-in-out">
     {Slides.map((slide, index) => (
-      <div class="flex-shrink-0 w-full h-full bg-cover bg-center relative">
+      <div class="flex-shrink-0 w-full h-full relative bg-black bg-opacity-50">
         <Image
           src={images[slide.bgImage].default}
           alt={slide.title}
-          class="absolute w-full h-full object-cover z-[1]"
+          class="absolute w-full h-full object-cover z-[-1]"
           inferSize
           loading="eager"
           quality={80}
         />
-        <div class="flex flex-col items-start justify-center section-container h-full absolute inset-0 bg-black bg-opacity-50 p-8">
-          <h1 class="text-[3.5rem] leading-[0.8] text-white">
+        <div class="flex flex-col items-start justify-center section-container h-full absolute inset-0 p-10 sm:p-16 md:p-20 lg:p-24 ">
+          <h1 class="w-full text-[3rem] sm:text-[5rem] md:text-[7rem] xl:text-[8rem] leading-[0.9] text-white mb-1 max-w-[700px] xl:max-w-[900px] break-words">
             {slide.title}
           </h1>
-          <p class="text-white mt-4 max-w-2xl">
-            {slide.description}
+          <p class="text-white text-[1.3rem] mb-10 sm:text-[1.5rem] md:text-[1.5rem] lg:text-[1.6rem] break-words max-w-[650px]">
+          {slide.description}
           </p>
-          <button class="bg-white text-green-700 font-semibold py-2 px-4 rounded shadow-lg mt-6">
-            {slide.ctaText}
-          </button>
+          <div class="flex w-full justify-center">
+            <Button text={slide.ctaText} url={slide.url} px="3rem" textSize="1.4rem" smText="1.6rem" mdText="1.6rem" lgText="1.7rem"/>
+          </div>
         </div>
       </div>
     ))}
   </div>
+  <button class="absolute top-1/2 -left-1 transform -translate-y-1/2 opacity-50 hover:opacity-75" id="prevBtn">
+    <Icon name="mdi:keyboard-arrow-left" class="size-12 sm:size-16 md:size-20 lg:size-25 xl:size-35 text-white" />
+  </button>
+  <button class="absolute top-1/2 -right-1 transform -translate-y-1/2 color-white opacity-50 hover:opacity-75" id="nextBtn">
+    <Icon name="mdi:keyboard-arrow-right" class="size-12 sm:size-16 md:size-20 lg:size-25 xl:size-35 text-white" />
+  </button>
 </section>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     const slideCount = document.querySelectorAll('.carousel-container > div').length;
-    
+    let carouselInterval: ReturnType<typeof setInterval>;
+
     function startCarousel() {
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slideCount;
-        updateSlide();
-      }, 5000); // Slide every 5 seconds
+      carouselInterval = setInterval(() => {
+        nextSlide();
+      }, 5000);
+    }
+
+    function resetCarousel() {
+      clearInterval(carouselInterval);
+      startCarousel();
     }
 
     function updateSlide() {
       const container = document.querySelector('.carousel-container') as HTMLElement;
       if (container) {
-        container.style.transition = 'transform 0.5s ease-in-out';
         container.style.transform = `translateX(-${currentSlide * 100}%)`;
       }
     }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slideCount;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+      updateSlide();
+    }
+
+    document.getElementById('nextBtn')?.addEventListener('click', () => {
+      nextSlide();
+      resetCarousel();
+    });
+
+    document.getElementById('prevBtn')?.addEventListener('click', () => {
+      prevSlide();
+      resetCarousel();
+    });
 
     startCarousel();
   });

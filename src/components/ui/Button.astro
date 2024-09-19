@@ -1,0 +1,53 @@
+---
+interface Props {
+  text: string;
+  px?: string;
+  py?: string;
+  textSize?: string;
+  smText?: string;
+  mdText?: string;
+  lgText?: string;
+  xlText?: string;
+  url: string;
+}
+
+const { text, textSize, smText, mdText, lgText, xlText, px, py, url } = Astro.props;
+---
+
+<button class="bg-blue text-white rounded-xl block hover:bg-light-blue">
+  <a href={url} class="block w-full h-full">
+    {text}
+  </a>
+</button>
+
+<style define:vars={{ px, py, textSize, smText, mdText, lgText, xlText }}>
+  button {
+    width: fit-content;
+    font-size: var(--textSize, 1.5rem);
+    padding: var(--py, 8px) var(--px, 1rem);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  @media (min-width: 640px) {
+    button {
+      font-size: var(--smText, var(--textSize, 1.5rem));
+    }
+  }
+  @media (min-width: 768px) {
+    button {
+      font-size: var(--mdText, var(--smText, var(--textSize, 1.5rem)));
+    }
+  }
+  @media (min-width: 1024px) {
+    button {
+      font-size: var(--lgText, var(--mdText, var(--smText, var(--textSize, 1.5rem))));
+    }
+  }
+  @media (min-width: 1280px) {
+    button {
+      font-size: var(--xlText, var(--lgText, var(--mdText, var(--smText, var(--textSize, 1.5rem)))));
+    }
+  }
+</style>
