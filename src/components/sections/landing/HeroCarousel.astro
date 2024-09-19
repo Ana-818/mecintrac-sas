@@ -45,7 +45,6 @@ export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg}
     const slideCount = document.querySelectorAll('.carousel-container > div').length;
     let carouselInterval: ReturnType<typeof setInterval>;
 
-    // Variables to track touch positions
     let startX = 0;
     let endX = 0;
 
@@ -87,7 +86,6 @@ export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg}
       resetCarousel();
     });
 
-    // Touch event listeners for swipe gestures
     const carouselContainer = document.querySelector('.carousel-container') as HTMLElement;
 
     carouselContainer.addEventListener('touchstart', (e) => {
