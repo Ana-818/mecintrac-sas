@@ -1,6 +1,16 @@
 ---
-
+import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import BenefitsSection from "@/data/landing/benefitsSection.json";
 ---
 <section class="section-container">
-    Hola
+    <DoubleTitle blackText={BenefitsSection.titleBlack} blueText={BenefitsSection.titleBlue} isVertical={BenefitsSection.isVertical} />
+    <p class="mx-auto text-center text-lg text-black md:w-1/2">{BenefitsSection.description}</p>
+
+    <div class="flex flex-col justify-center gap-4 mt-8">
+        <div class="flex flex-col justify-between">
+            
+        </div>
+        <div></div>
+        <div></div>        
+    </div>
 </section>
