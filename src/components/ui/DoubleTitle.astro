@@ -9,5 +9,5 @@ const { blackText, blueText, isVertical = false } = Astro.props;
 ---
 <h2 class={`text-3xl font-semibold ${isVertical ? 'flex flex-col justify-center items-center ' : 'flex flex-row justify-center items-center flex-wrap'}`}>
   <span class="text-black font-lalezar tracking-wider break-words text-center">{blackText}</span>
-  <span class={`text-blue font-lalezar tracking-wider break-words text-center ${isVertical ? 'mt-2' : 'ml-2'}`}>{blueText}</span>
+  <span class={`text-blue font-lalezar tracking-wider break-words text-center ${isVertical ? '' : 'ml-2'}`}>{blueText}</span>
 </h2>
