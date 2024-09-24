@@ -11,8 +11,8 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
     <DoubleTitle blackText="Nuestros" blueText="Clientes" isVertical />
   </div>
 
-  <div class="flex flex-row relative overflow-hidden w-full logos">
-    <div class="flex flex-row logos-slide animate-slide whitespace-nowrap gap-7 md:gap-10 lg:gap-14">
+  <div class="relative flex flex-row overflow-hidden w-full logos">
+    <div class="flex flex-row logos-slide animate-slide whitespace-nowrap gap-7 md:gap-10 lg:gap-14 mr-[28px] md:mr-[40px] lg:mr-[56px]">
       {clientsLogos.map((logo, index) => (
         <Image 
         src={images[logo.logo].default} 
@@ -24,8 +24,8 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
       ))}
     </div>
 
-    <div class="absolute top-0 left-0 w-16 h-full logos-before"></div>
-    <div class="absolute top-0 right-0 w-16 h-full logos-after"></div>
+    <div class="absolute logos-before left-0 top-0 w-24 h-full"></div>
+    <div class="absolute logos-after right-0 top-0 w-24 h-full"></div>
   </div>
 </section>
 
@@ -66,9 +66,11 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
 
   .logos-before {
     background: linear-gradient(to left, rgba(0, 0, 0, 0), theme('colors.background'));
+    z-index: 2;
   }
 
   .logos-after {
     background: linear-gradient(to right, rgba(0, 0, 0, 0), theme('colors.background'));
+    z-index: 2;
   }
 </style>
