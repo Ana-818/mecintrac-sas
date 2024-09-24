@@ -12,7 +12,7 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
   </div>
 
   <div class="relative flex flex-row overflow-hidden w-full logos">
-    <div class="flex flex-row logos-slide animate-slide whitespace-nowrap gap-7 md:gap-10 lg:gap-14 mr-[28px] md:mr-[40px] lg:mr-[56px]">
+    <div class="logos-slide animate-slide whitespace-nowrap">
       {clientsLogos.map((logo, index) => (
         <Image 
         src={images[logo.logo].default} 
@@ -20,7 +20,9 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
         height={50}
         inferSize
         draggable="false"
+        class="select-none"
         />
+        <div class="w-[28px] md:w-[40px] lg:w-[56px]"></div>
       ))}
     </div>
 
@@ -57,7 +59,8 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
   }
 
   .animate-slide {
-    animation: slide 25s linear infinite;
+    animation: slide 25s infinite linear;
+    display: inline-flex;
   }
 
   .logos-slide {
