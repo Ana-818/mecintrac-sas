@@ -3,6 +3,7 @@ import DoubleTitle from "@components/ui/DoubleTitle.astro";
 import clientsLogos from "@data/clientsLogos.json";
 import { Image } from 'astro:assets';
 export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png, jpg, jpeg}', { eager: true }) as Record<string, { default: string }>;
+
 ---
 
 <section class="section-container flex flex-col items-center gap-5 md:gap-0 md:flex-row">
@@ -23,31 +24,34 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
       ))}
     </div>
 
-    <!-- Add margin between the two slides -->
-    <div class="flex flex-row logos-slide animate-slide whitespace-nowrap gap-7 md:gap-10 lg:gap-14 ml-[1.5rem] md:ml-[2.5rem] lg:ml-[3.5rem]">
-      {clientsLogos.map((logo) => (
-        <Image 
-        src={images[logo.logo].default} 
-        alt={logo.name} 
-        height={50}
-        inferSize
-        draggable="false"
-        />
-      ))}
-    </div>
-
-    <div class="absolute logos-before left-0 top-0 w-24 h-full"></div>
-    <div class="absolute logos-after right-0 top-0 w-24 h-full"></div>
+    <div class="absolute top-0 left-0 w-16 h-full logos-before"></div>
+    <div class="absolute top-0 right-0 w-16 h-full logos-after"></div>
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const logosSlide = document.querySelector('.logos-slide');
+    const logosContainer = document.querySelector('.logos');
+
+    if (logosSlide && logosContainer) {
+      const containerWidth = logosContainer.clientWidth;
+
+      while (logosContainer.scrollWidth < containerWidth * 2) {
+        const clone = logosSlide.cloneNode(true);
+        logosContainer.appendChild(clone);
+      }
+    }
+  });
+</script>
+
 <style>
   @keyframes slide {
-    0% {
+    from {
       transform: translateX(0);
     }
 
-    100% {
+    to {
       transform: translateX(-100%);
     }
   }
@@ -61,10 +65,10 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
   }
 
   .logos-before {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), theme('colors.background'));
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), theme('colors.background'));
   }
 
   .logos-after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), theme('colors.background'));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), theme('colors.background'));
   }
 </style>
