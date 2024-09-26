@@ -11,8 +11,8 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
     <DoubleTitle blackText="Nuestros" blueText="Clientes" isVertical />
   </div>
 
-  <div class="relative flex flex-row overflow-hidden w-full logos bg-black">
-    <div class="logos-slide whitespace-nowrap">
+  <div class="outer-slider">
+    <div class="inner-slider">
       {clientsLogos.map((logo, index) => (
         <Image 
         src={images[logo.logo].default} 
@@ -22,56 +22,44 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
         draggable="false"
         class="select-none"
         />
-        <div class="w-[28px] md:w-[40px] lg:w-[56px]"></div>
       ))}
+      {clientsLogos.map((logo, index) => (
+        <Image 
+        src={images[logo.logo].default} 
+        alt={logo.name} 
+        height={50}
+        inferSize
+        draggable="false"
+        class="select-none"
+        />
+      ))}  
     </div>
-
-    <div class="absolute logos-before left-0 top-0 w-24 h-full"></div>
-    <div class="absolute logos-after right-0 top-0 w-24 h-full"></div>
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const logosSlide = document.querySelector('.logos-slide');
-    const logosContainer = document.querySelector('.logos');
-
-    if (logosSlide && logosContainer) {
-      const containerWidth = logosContainer.clientWidth;
-
-      while (logosContainer.scrollWidth < containerWidth * 2) {
-        const clone = logosSlide.cloneNode(true);
-        logosContainer.appendChild(clone);
-      }
-    }
-  });
-</script>
-
 <style>
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
+  .outer-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
 
-    to {
-      transform: translateX(-100%);
-    }
-  }
-
-  .logos-slide {
-    animation: slide 25s infinite linear;
-    display: inline-flex;
-    min-width: fit-content;
+.inner-slider {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 10s linear infinite;
+    flex-wrap: nowrap;
     flex-shrink: 0;
-  }
+    gap: 30px;
+}
 
-  .logos-before {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), theme('colors.background'));
-    z-index: 2;
-  }
-
-  .logos-after {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), theme('colors.background'));
-    z-index: 2;
-  }
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
 </style>
