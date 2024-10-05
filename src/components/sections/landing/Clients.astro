@@ -1,0 +1,96 @@
+---
+import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import clientsLogos from "@data/clientsLogos.json";
+import { Image } from 'astro:assets';
+export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png, jpg, jpeg}', { eager: true }) as Record<string, { default: string }>;
+
+---
+
+<section class="section-container flex flex-col items-center gap-5 md:gap-0 md:flex-row">
+  <div class="inline-flex md:pr-4">
+    <DoubleTitle blackText="Nuestros" blueText="Clientes" isVertical />
+  </div>
+
+  <div class="outer-slider">
+    <div class="inner-slider">
+      {clientsLogos.map((logo, index) => (
+        <Image 
+        src={images[logo.logo].default} 
+        alt={logo.name} 
+        height={50}
+        inferSize
+        draggable="false"
+        class="select-none mx-8 md:mx-16"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const innerCarousel = document.querySelector('.inner-slider');
+  const innerCarouselWidth = (innerCarousel as HTMLElement)!.scrollWidth;
+  const outerCarouselWidth = 1265.7;
+  const numClones = Math.ceil(1.5 * outerCarouselWidth / innerCarouselWidth);
+
+  for (let i = 0; i < numClones; i++) {
+    const clonedCarousel = innerCarousel!.cloneNode(true) as Element;
+    clonedCarousel.setAttribute('aria-hidden', 'true');
+    innerCarousel!.parentNode?.appendChild(clonedCarousel);
+  }
+  
+  const innerSliders = document.querySelectorAll('.inner-slider');
+
+  innerSliders.forEach((innerSlider) => {
+    innerSlider.classList.add('animate-scroll');
+  });
+</script>
+
+<style>
+  .outer-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.inner-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    animation: none;
+}
+
+.outer-slider:before, .outer-slider:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  @apply w-[50px] md:w-[100px] lg:w-[150px];
+  height: 100%;
+  z-index: 2;
+}
+
+.outer-slider:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(241, 241, 241, 0), #f1f1f1);
+}
+
+.outer-slider:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(241, 241, 241, 0), #f1f1f1);
+}
+
+.animate-scroll {
+    animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</style>

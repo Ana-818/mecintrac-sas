@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Moldes",
+        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "image": "/src/assets/images/services/moldes.jpg"
+    },
+    {
+        "title": "Troqueles",
+        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "image": "/src/assets/images/services/troqueles.png"
+    },
+    {
+        "title": "Repuestos",
+        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "image": "/src/assets/images/services/repuestos.png"
+    },
+    {
+        "title": "Desarrollo de Proyectos informaticosas",
+        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "image": "/src/assets/images/services/desarrollo-de-proyectos.png"
+    },
+    {
+        "title": "Ejemplo",
+        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "image": "/src/assets/images/services/service-1.jpg"
+    }
+]

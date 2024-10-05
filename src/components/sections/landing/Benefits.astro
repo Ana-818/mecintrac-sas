@@ -1,16 +1,23 @@
 ---
 import DoubleTitle from "@components/ui/DoubleTitle.astro";
-import BenefitsSection from "@/data/landing/benefitsSection.json";
+import { Icon } from 'astro-icon/components'
 ---
 <section class="section-container">
-    <DoubleTitle blackText={BenefitsSection.titleBlack} blueText={BenefitsSection.titleBlue} isVertical={BenefitsSection.isVertical} />
-    <p class="mx-auto text-center text-lg text-black md:w-1/2">{BenefitsSection.description}</p>
+  <DoubleTitle blackText={"Porque escoger"} blueText={"MECINTRAC"} />
+  <p class="mx-auto text-center text-lg text-black md:w-1/2">{"Mecintrac convierte tus proyectos en realidad con precisión y compromiso, asegurando resultados de calidad y fiabilidad."}</p>
 
-    <div class="flex flex-col justify-center gap-4 mt-8">
-        <div class="flex flex-col justify-between">
-            
-        </div>
-        <div></div>
-        <div></div>        
+  <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-5">
+    <div class="flex flex-row items-center bg-blue rounded-xl gap-1 md:gap-2 px-4 py-3">
+      <Icon name="mdi:check-decagram-outline" class="text-white size-8" />
+      <p class="text-white text-lg">Calidad</p>
     </div>
+    <div class="flex flex-row items-center bg-white rounded-xl gap-1 md:gap-2 px-4 py-3">
+      <Icon name="mdi:clock-time-four-outline" class="text-blue size-8" />
+      <p class="text-blue text-lg">Puntualidad</p>
+    </div>
+    <div class="flex flex-row items-center bg-blue rounded-xl gap-1 md:gap-2 px-4 py-3">
+      <Icon name="mdi:shield-check-outline" class="text-white size-8" />
+      <p class="text-white text-lg">Confianza</p>
+    </div>
+  </div>
 </section>

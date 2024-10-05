@@ -1,0 +1,28 @@
+---
+import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import ServicesData from "@data/Services.json";
+import { Image } from 'astro:assets';
+export const images = import.meta.glob('/src/assets/images/services/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
+---
+
+<section class="section-container flex flex-col justify-center items-center">
+    <DoubleTitle blackText="Nuestros Servicios" blueText="Servicios" isVertical />
+
+    <div class="inline-grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 md:grid-cols-2 mt-4">
+        {ServicesData.slice(0, 4).map((service) => (
+            <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px] lg:w-[400px] lg:h-[300px] xl:w-[500px] xl:h-[350px]">
+                <Image
+                    src={images[service.image].default}
+                    alt={service.title}
+                    class="w-full h-full object-cover absolute inset-0 z-[-1] rounded-lg"
+                    inferSize
+                    loading="eager"
+                    quality={80}
+                />
+                <div class="absolute inset-0  flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg">
+                    <h3 class="text-white text-xl md:text-2xl lg:text-3xl px-2 pb-4 text-center">{service.title}</h3>
+                </div> 
+            </div>
+        ))}
+    </div>
+</section>
