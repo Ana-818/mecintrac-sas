@@ -12,7 +12,7 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
   </div>
 
   <div class="outer-slider">
-    <div class="inner-slider">
+    <div class="inner-slider bg-black">
       {clientsLogos.map((logo, index) => (
         <Image 
         src={images[logo.logo].default} 
@@ -20,38 +20,47 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
         height={50}
         inferSize
         draggable="false"
-        class="select-none"
+        class="select-none mx-16"
         />
       ))}
-      {clientsLogos.map((logo, index) => (
-        <Image 
-        src={images[logo.logo].default} 
-        alt={logo.name} 
-        height={50}
-        inferSize
-        draggable="false"
-        class="select-none"
-        />
-      ))}  
     </div>
   </div>
 </section>
+
+<script>
+  const innerCarousel = document.querySelector('.inner-slider');
+  const numClones = 2;
+
+  for (let i = 0; i < numClones; i++) {
+    const clonedCarousel = innerCarousel!.cloneNode(true);
+    innerCarousel!.parentNode?.appendChild(clonedCarousel);
+  }
+  
+  const innerSliders = document.querySelectorAll('.inner-slider');
+
+  innerSliders.forEach((innerSlider) => {
+    innerSlider.classList.add('animate-scroll');
+  });
+</script>
 
 <style>
   .outer-slider {
     width: 100%;
     overflow: hidden;
     position: relative;
-    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
 }
 
 .inner-slider {
     display: flex;
-    width: fit-content;
-    animation: scroll-left 10s linear infinite;
     flex-wrap: nowrap;
     flex-shrink: 0;
-    gap: 30px;
+    animation: none;
+}
+
+.animate-scroll {
+    animation: scroll-left 10s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -59,7 +68,7 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-50% - 15px));
+        transform: translateX(-100%);
     }
 }
 </style>
