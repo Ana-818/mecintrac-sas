@@ -29,7 +29,10 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
 
 <script>
   const innerCarousel = document.querySelector('.inner-slider');
-  const numClones = 2;
+  const outerCarousel = document.querySelector('.outer-slider');
+  const innerCarouselWidth = (innerCarousel as HTMLElement)!.scrollWidth;
+  const outerCarouselWidth = 1265.7;
+  const numClones = Math.ceil(1.5 * outerCarouselWidth / innerCarouselWidth);
 
   for (let i = 0; i < numClones; i++) {
     const clonedCarousel = innerCarousel!.cloneNode(true);
