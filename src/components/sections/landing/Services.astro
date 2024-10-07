@@ -16,7 +16,7 @@ export const images = import.meta.glob('/src/assets/images/services/*.{jpg,png,j
                     alt={service.title}
                     class="w-full h-full object-cover absolute inset-0 z-[-1] rounded-lg"
                     inferSize
-                    loading="eager"
+                    loading="lazy"
                     quality={80}
                 />
                 <div class="absolute inset-0  flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg">
