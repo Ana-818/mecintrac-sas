@@ -1,0 +1,59 @@
+---
+import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import FaqInfo from "@data/faqInfo.json";
+import { Icon } from 'astro-icon/components'
+
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+const makeId = (base: string, index: number) => `${base}${index + 1}`;
+---
+
+<section class="section-container">
+    <div class="grid gap-10 md:grid-cols-5">
+        <div class="md:col-span-2">
+            <DoubleTitle blackText="PREGUNTAS" blueText="FRECUENTES" isVertical />
+        </div>
+
+        <div class="md:col-span-3">
+            <div class="hs-accordion-group">
+                {
+                  FaqInfo.map((faq: Faq, index: number) => {
+                    let id = makeId("faq-heading-", index);
+                    let collapseId = makeId("faq-collapse-", index);
+
+                    return (
+                      <div class={`hs-accordion ${index === 0 ? 'active' : ''}`} id={id}>
+                        <!-- Accordion Header (Question) -->
+                        <button
+                          class="hs-accordion-toggle font-bold inline-flex w-full items-center justify-between py-3 text-left text-lg text-black"
+                          aria-expanded={index === 0 ? 'true' : 'false'}
+                          aria-controls={collapseId}
+                        >
+                          {faq.question}
+                          <Icon name="mdi:apple-keyboard-control" class="hs-accordion-active:hidden text-black size-6" />
+                          <Icon name="mdi:apple-keyboard-control" class="hs-accordion-active:block hidden text-black size-6 rotate-180" />
+                        </button>
+
+                        <div
+                          id={collapseId}
+                          class={`hs-accordion-content ${index === 0 ? '' : 'hidden'} overflow-hidden transition-[height] duration-300`}
+                          role="region"
+                          aria-labelledby={id}
+                        >
+                          <p class="text-gray-700">{faq.answer}</p>
+                        </div>
+                      </div>
+                    );
+                  })
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import "@node/preline/dist/preline.js";
+</script>
