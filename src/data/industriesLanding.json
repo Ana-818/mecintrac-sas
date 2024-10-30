@@ -1,0 +1,31 @@
+[
+    {
+      "name": "Automotriz",
+      "image": "/src/assets/images/industries/hero-slide-1.jpg"
+    },
+    {
+      "name": "Textil",
+      "image": "/src/assets/images/industries/hero-slide-2.jpg"
+    },
+    {
+      "name": "Litográfica",
+      "image": "/src/assets/images/industries/hero-slide-3.jpg"
+    },
+    {
+      "name": "Carga o transporte",
+      "image": "/src/assets/images/industries/hero-slide-1.jpg"
+    },
+    {
+      "name": "Alimenticia",
+      "image": "/src/assets/images/industries/hero-slide-2.jpg"
+    },
+    {
+      "name": "Médica",
+      "image": "/src/assets/images/industries/hero-slide-3.jpg"
+    },
+    {
+      "name": "Constructora",
+      "image": "/src/assets/images/industries/hero-slide-1.jpg"
+    }
+  ]
+  

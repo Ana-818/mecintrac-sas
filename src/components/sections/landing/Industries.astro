@@ -1,0 +1,55 @@
+---
+import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import IndustriesLanding from "@data/industriesLanding.json";
+import { Image } from 'astro:assets';
+
+interface Industry {
+  name: string,
+  image: string
+}
+export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png,jpeg, webp}', { eager: true }) as Record<string, { default: string }>;
+---
+
+<section class="section-container flex flex-col items-center">
+  <DoubleTitle blackText="SOLUCIONES" blueText="PARA TU INDUSTRIA" isVertical />
+
+  <div class="relative flex overflow-hidden w-full max-w-4xl py-1 mt-4 rounded-[36px] border border-white/40 bg-white/60 justify-center align-center">
+    <nav class="flex overflow-x-auto space-x-9 mx-5 py-2 scroll-smooth scrollbar-hide whitespace-nowrap" aria-label="Tabs" role="tablist">
+      {IndustriesLanding.map((industry: Industry, index: number) => (
+        <button
+          class={`hover:text-light-blue hs-tab-active:text-blue ${index === 0 ? 'active' : ''}`}
+          id={`tab-${index + 1}`}
+          aria-selected={index === 0 ? 'true' : 'false'}
+          data-hs-tab={`#tabs-${index + 1}`}
+          aria-controls={`tabs-${index + 1}`}
+          role="tab"
+        >
+          {industry.name}
+        </button>
+      ))}
+    </nav>
+  </div>
+
+  <div class="mt-3">
+    {IndustriesLanding.map((industry:Industry, index) => (
+      <div
+        id={`tabs-${index + 1}`}
+        class={`${index === 0 ? '' : 'hidden'}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${index + 1}`}
+      >
+        <Image src={images[industry.image].default} alt={`${industry.name} Image`} height={500} inferSize class="rounded-lg border object-cover" />
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
