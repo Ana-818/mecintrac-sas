@@ -9,8 +9,8 @@ export default {
     extend: {
       colors: {
         background: "#f1f1f1",
-        blue: "#1993c5",
-		    'light-blue': "#60bad4",
+        blue: "#0f4a75",
+		    'light-blue': "#1993c5",
 		neutral: colors.neutral
       },
       fontFamily: {
