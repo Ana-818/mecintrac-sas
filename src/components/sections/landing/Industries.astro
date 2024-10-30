@@ -2,6 +2,7 @@
 import DoubleTitle from "@components/ui/DoubleTitle.astro";
 import IndustriesLanding from "@data/industriesLanding.json";
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
 
 interface Industry {
   name: string,
@@ -13,8 +14,12 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
 <section class="section-container flex flex-col items-center">
   <DoubleTitle blackText="SOLUCIONES" blueText="PARA TU INDUSTRIA" isVertical />
 
-  <div class="relative flex overflow-hidden w-full max-w-4xl py-1 mt-4 rounded-[36px] border border-white/40 bg-white/60 justify-center align-center">
-    <nav class="flex overflow-x-auto space-x-9 mx-5 py-2 scroll-smooth scrollbar-hide whitespace-nowrap" aria-label="Tabs" role="tablist">
+  <div class="relative flex overflow-hidden w-full max-w-4xl py-1 mt-4 rounded-[36px] border border-white/40 bg-white/60 justify-center align-center shadow-lg">
+    <button id="left-arrow" class="absolute -left-1 top-1/2 -translate-y-1/2 md:px-2">
+      <Icon name="mdi:keyboard-arrow-left" class="size-10 text-black opacity-30" />
+    </button>
+    
+    <nav id="scrollableTabs" class="flex overflow-x-auto space-x-9 mx-6 py-2 scroll-smooth scrollbar-hide whitespace-nowrap" aria-label="Tabs" role="tablist">
       {IndustriesLanding.map((industry: Industry, index: number) => (
         <button
           class={`hover:text-light-blue hs-tab-active:text-blue ${index === 0 ? 'active' : ''}`}
@@ -28,6 +33,10 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
         </button>
       ))}
     </nav>
+
+    <button id="right-arrow" class="absolute -right-1 top-1/2 -translate-y-1/2 md:px-2">
+      <Icon name="mdi:keyboard-arrow-right" class="size-10 text-black opacity-30" />
+    </button>
   </div>
 
   <div class="mt-3">
@@ -43,6 +52,30 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
     ))}
   </div>
 </section>
+
+<script>
+  function scrollLeft() {
+    const container = document.getElementById('scrollableTabs');
+    container!.scrollBy({ left: -150, behavior: 'smooth' });
+  }
+
+  function scrollRight() {
+    const container = document.getElementById('scrollableTabs');
+    container!.scrollBy({ left: 150, behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
+
+    if (leftArrow) {
+      leftArrow.addEventListener('click', scrollLeft);
+    }
+    if (rightArrow) {
+      rightArrow.addEventListener('click', scrollRight);
+    }
+  });
+</script>
 
 <style>
   .scrollbar-hide::-webkit-scrollbar {
