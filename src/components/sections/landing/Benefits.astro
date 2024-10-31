@@ -7,17 +7,34 @@ import { Icon } from 'astro-icon/components'
   <p class="mx-auto text-center text-lg text-black md:w-1/2">{"Mecintrac convierte tus proyectos en realidad con precisión y compromiso, asegurando resultados de calidad y fiabilidad."}</p>
 
   <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-5">
-    <div class="flex flex-row items-center bg-blue rounded-xl gap-1 md:gap-2 px-4 py-3">
+    <div class="flex flex-row items-center justify-center bg-blue rounded-xl gap-1 md:gap-2 px-4 py-3 benefit-item">
       <Icon name="mdi:check-decagram-outline" class="text-white size-8" />
       <p class="text-white text-lg">Calidad</p>
     </div>
-    <div class="flex flex-row items-center bg-white rounded-xl gap-1 md:gap-2 px-4 py-3">
+    <div class="flex flex-row items-center justify-center bg-white rounded-xl gap-1 md:gap-2 px-4 py-3 benefit-item">
       <Icon name="mdi:clock-time-four-outline" class="text-blue size-8" />
       <p class="text-blue text-lg">Puntualidad</p>
     </div>
-    <div class="flex flex-row items-center bg-blue rounded-xl gap-1 md:gap-2 px-4 py-3">
+    <div class="flex flex-row items-center justify-center bg-blue rounded-xl gap-1 md:gap-2 px-4 py-3 benefit-item">
       <Icon name="mdi:shield-check-outline" class="text-white size-8" />
       <p class="text-white text-lg">Confianza</p>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const benefitItems = document.querySelectorAll('.benefit-item');
+    let maxWidth = 0;
+
+    benefitItems.forEach(item => {
+      const itemWidth = (item as HTMLElement).offsetWidth;
+      if (itemWidth > maxWidth) {
+        maxWidth = itemWidth;
+      }
+    });
+    benefitItems.forEach(item => {
+      (item as HTMLElement).style.width = `${maxWidth}px`;
+    });
+  });
+</script>
