@@ -12,13 +12,9 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
 ---
 
 <section class="section-container">
-    <div class="grid gap-10 md:grid-cols-5">
-        <div class="md:col-span-2">
-            <DoubleTitle blackText="PREGUNTAS" blueText="FRECUENTES" isVertical />
-        </div>
+        <DoubleTitle blackText="PREGUNTAS" blueText="FRECUENTES" isVertical />
 
-        <div class="md:col-span-3">
-            <div class="hs-accordion-group">
+            <div class="hs-accordion-group max-w-3xl mx-auto">
                 {
                   FaqInfo.map((faq: Faq, index: number) => {
                     let id = makeId("faq-heading-", index);
@@ -50,8 +46,6 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
                   })
                 }
             </div>
-        </div>
-    </div>
 </section>
 
 <script>

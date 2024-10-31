@@ -22,7 +22,7 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
     <nav id="scrollableTabs" class="flex overflow-x-auto space-x-9 mx-6 py-2 scroll-smooth scrollbar-hide whitespace-nowrap" aria-label="Tabs" role="tablist">
       {IndustriesLanding.map((industry: Industry, index: number) => (
         <button
-          class={`hover:text-light-blue hs-tab-active:text-blue ${index === 0 ? 'active' : ''}`}
+          class={`hover:text-light-blue hs-tab-active:text-blue hs-tab-active:underline ${index === 0 ? 'active' : ''}`}
           id={`tab-${index + 1}`}
           aria-selected={index === 0 ? 'true' : 'false'}
           data-hs-tab={`#tabs-${index + 1}`}
