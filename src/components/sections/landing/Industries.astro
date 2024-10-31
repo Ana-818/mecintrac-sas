@@ -19,7 +19,7 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
       <Icon name="mdi:keyboard-arrow-left" class="size-10 text-black opacity-30" />
     </button>
     
-    <nav id="scrollableTabs" class="flex overflow-x-auto space-x-9 mx-6 py-2 scroll-smooth scrollbar-hide whitespace-nowrap" aria-label="Tabs" role="tablist">
+    <div id="scrollableTabs" class="flex overflow-x-auto space-x-9 mx-6 py-2 scroll-smooth scrollbar-hide whitespace-nowrap" aria-label="Tabs" role="tablist">
       {IndustriesLanding.map((industry: Industry, index: number) => (
         <button
           class={`hover:text-light-blue hs-tab-active:text-blue hs-tab-active:underline ${index === 0 ? 'active' : ''}`}
@@ -32,7 +32,7 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
           {industry.name}
         </button>
       ))}
-    </nav>
+    </div>
 
     <button id="right-arrow" class="absolute -right-1 top-1/2 -translate-y-1/2 md:px-2">
       <Icon name="mdi:keyboard-arrow-right" class="size-10 text-black opacity-30" />
@@ -47,7 +47,7 @@ export const images = import.meta.glob('/src/assets/images/industries/*.{jpg,png
         role="tabpanel"
         aria-labelledby={`tab-${index + 1}`}
       >
-        <Image src={images[industry.image].default} alt={`${industry.name} Image`} height={500} inferSize class="rounded-lg border object-cover" />
+        <Image src={images[industry.image].default} alt={`${industry.name} Mecintrac`} height={500} inferSize class="rounded-lg border object-cover" />
       </div>
     ))}
   </div>
