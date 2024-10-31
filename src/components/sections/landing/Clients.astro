@@ -6,12 +6,10 @@ export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png,
 
 ---
 
-<section class="section-container flex flex-col items-center gap-5 md:gap-0 md:flex-row">
-  <div class="inline-flex md:pr-4">
-    <DoubleTitle blackText="Nuestros" blueText="Clientes" isVertical />
-  </div>
+<section class="section-container">
+  <DoubleTitle blackText="NUESTROS" blueText="CLIENTES"/>
 
-  <div class="outer-slider">
+  <div class="outer-slider mt-4">
     <div class="inner-slider">
       {clientsLogos.map((logo, index) => (
         <Image 
