@@ -19,20 +19,38 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-background overflow-x-hidden">
+  <body class="bg-background overflow-x-hidden wrapper">
     <Navbar />
-    <main class="h-full">
+    <main class="flex-grow page-body">
       <slot />
     </main>
-    <FooterSection />
-    <style>
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
+    <div class="page-footer">
+      <FooterSection />
+    </div>
   </body>
 </html>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-body {
+    flex-grow: 1;
+  }
+
+  .page-footer {
+    flex-shrink: 0;
+  }
+</style>
