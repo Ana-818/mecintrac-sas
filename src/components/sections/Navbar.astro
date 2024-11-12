@@ -76,7 +76,6 @@ import "@/assets/styles/global.css";
       const toggleButton = document.getElementById('show-btn');
       
       if (!collapse!.contains(event.target as Node) && !toggleButton!.contains(event.target as Node)) {
-        console.log('Clicked outside');
         closeCollapse();
       }
     });
