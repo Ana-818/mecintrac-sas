@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Diseño",
+        "description": "Diseñamos modelos computadorizados para nuestras máquinas CNC.",
+        "image": "/src/assets/images/process/diseño.jpg"
+    },
+    {
+        "title": "Desarrollo",
+        "description": "Desarrollamos las piezas utilizando nuestras máquinas para asegurar una fabricación precisa.",
+        "image": "/src/assets/images/process/desarrollo.jpg"
+    },
+    {
+        "title": "Resultado",
+        "description": "Te entregamos piezas de alta calidad que cumplen con las especificaciones.",
+        "image": "/src/assets/images/process/resultado.jpg"
+    }
+]

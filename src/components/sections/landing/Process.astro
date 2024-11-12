@@ -1,34 +1,16 @@
 ---
 import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import processSteps from "@data/processSteps.json";
 import { Image } from "astro:assets";
-import diseño from "@/assets/images/process/diseño.jpg";
-import desarrollo from "@/assets/images/process/desarrollo.jpg";
-import resultado from "@/assets/images/process/resultado.jpg";
-
-const steps = [
-  {
-    title: "Diseño",
-    description: "Diseñamos modelos computadorizados para nuestras máquinas CNC.",
-    image: diseño,
-  },
-  {
-    title: "Desarrollo",
-    description: "Desarrollamos las piezas utilizando nuestras máquinas para asegurar una fabricación precisa.",
-    image: desarrollo,
-  },
-  {
-    title: "Resultado",
-    description: "Te entregamos piezas de alta calidad que cumplen con las especificaciones.",
-    image: resultado,
-  },
-];
+export const images = import.meta.glob('/src/assets/images/process/*.{webp,png,jpg,jpeg}', { eager: true }) as Record<string, { default: string }>;
+console.log(images)
 ---
 
 <section class="section-container">
   <DoubleTitle blackText={"DEL DISEÑO"} blueText={"A LA REALIDAD"} isVertical/>
 
   <div class="flex flex-col mt-5 gap-14 lg:gap-24">
-    {steps.map((step, index) => (
+    {processSteps.map((step, index) => (
       <div class="flex flex-col md:flex-row gap-8 md:gap-28 lg:gap-60 justify-center items-center">
         <div class="flex flex-row gap-4">
           <h3 class="text-9xl text-blue">{index + 1}</h3>
@@ -37,7 +19,7 @@ const steps = [
             <p class="max-w-[22ch]">{step.description}</p>
           </div>
         </div>
-        <Image src={step.image} alt={step.title} height={300} inferSize class="rounded-full w-64 h-64 object-cover mx-auto md:mx-0" />
+        <Image src={images[step.image].default} alt={step.title} height={300} inferSize class="rounded-full w-64 h-64 object-cover" />
       </div>
     ))}
 

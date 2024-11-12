@@ -2,7 +2,7 @@
 import DoubleTitle from "@components/ui/DoubleTitle.astro";
 import clientsLogos from "@data/clientsLogos.json";
 import { Image } from 'astro:assets';
-export const images = import.meta.glob('/src/assets/images/clients/*.{webp, png, jpg, jpeg}', { eager: true }) as Record<string, { default: string }>;
+export const images = import.meta.glob('/src/assets/images/clients/*.{webp,png,jpg,jpeg}', { eager: true }) as Record<string, { default: string }>;
 
 ---
 
