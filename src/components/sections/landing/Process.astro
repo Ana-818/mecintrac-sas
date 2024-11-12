@@ -1,0 +1,45 @@
+---
+import DoubleTitle from "@components/ui/DoubleTitle.astro";
+import { Image } from "astro:assets";
+import diseño from "@/assets/images/process/diseño.jpg";
+import desarrollo from "@/assets/images/process/desarrollo.jpg";
+import resultado from "@/assets/images/process/resultado.jpg";
+
+const steps = [
+  {
+    title: "Diseño",
+    description: "Diseñamos modelos computadorizados para nuestras máquinas CNC.",
+    image: diseño,
+  },
+  {
+    title: "Desarrollo",
+    description: "Desarrollamos las piezas utilizando nuestras máquinas para asegurar una fabricación precisa.",
+    image: desarrollo,
+  },
+  {
+    title: "Resultado",
+    description: "Te entregamos piezas de alta calidad que cumplen con las especificaciones.",
+    image: resultado,
+  },
+];
+---
+
+<section class="section-container">
+  <DoubleTitle blackText={"DEL DISEÑO"} blueText={"A LA REALIDAD"} isVertical/>
+
+  <div class="flex flex-col mt-5 gap-14 lg:gap-24">
+    {steps.map((step, index) => (
+      <div class="flex flex-col md:flex-row gap-8 md:gap-28 lg:gap-60 justify-center items-center">
+        <div class="flex flex-row gap-4">
+          <h3 class="text-9xl text-blue">{index + 1}</h3>
+          <div class="flex flex-col">
+            <h4 class="text-4xl text-blue">{step.title}</h4>
+            <p class="max-w-[22ch]">{step.description}</p>
+          </div>
+        </div>
+        <Image src={step.image} alt={step.title} width={300} height={300} class="rounded-full w-64 h-64 object-cover mx-auto md:mx-0" />
+      </div>
+    ))}
+
+  </div>
+</section>
