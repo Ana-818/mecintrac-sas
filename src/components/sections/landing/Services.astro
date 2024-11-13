@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 export const images = import.meta.glob('/src/assets/images/services/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
 ---
 
-<section class="section-container flex flex-col justify-center items-center">
+<section class="section-container flex flex-col justify-center items-center background-image pb-8">
     <DoubleTitle blackText="SERVICIOS" blueText="A TU MEDIDA" isVertical />
 
     <div class="inline-grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 md:grid-cols-2 mt-4">
@@ -26,3 +26,13 @@ export const images = import.meta.glob('/src/assets/images/services/*.{jpg,png,j
         ))}
     </div>
 </section>
+<style>
+    .background-image {
+        background-image: url('../../../assets/images/bg.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        position: relative;
+    }
+</style>
