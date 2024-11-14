@@ -1,1 +1,32 @@
-sadfasd
+---
+import Layout from "@/layouts/Layout.astro";
+import Services from "@/data/Services.json";
+import { Image } from 'astro:assets';
+import { images } from "@/components/sections/landing/Services.astro";
+---
+
+<Layout title="Servicios">
+  <div class="section-container mt-16 flex flex-col items-center">
+    <h1 class="text-5xl font-bold tracking-wider text-blue">SERVICIOS</h1>
+    <p class="text-lg max-w-2xl mb-4">En Mecintrac, fabricamos moldes, troqueles, repuestos y maquinaria de alta calidad. Con un equipo experto y tecnología avanzada, desarrollamos soluciones metálicas precisas y eficientes para diversas industrias.</p>
+
+    {Services.map((service) => (
+      <div class="relative flex rounded-lg w-full max-w-2xl h-[80px] my-3 justify-center items-center">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-wider text-white font-roboto text-center">{service.title}</h2>
+        <Image
+          src={images[service.image].default}
+          alt={service.title}
+          class="w-full h-full object-cover absolute inset-0 z-[-2] rounded-lg"
+          quality={80}
+          widths={[200, 400, 600]}
+          sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 600px"
+          inferSize
+        />
+        <div class="absolute inset-0  flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg z-[-1]">
+        </div> 
+      </div>
+    ))}
+  </div>
+  
+
+</Layout>

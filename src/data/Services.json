@@ -18,10 +18,5 @@
         "title": "Desarrollo de Proyectos",
         "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
         "image": "/src/assets/images/services/desarrollo-de-proyectos.png"
-    },
-    {
-        "title": "Ejemplo",
-        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
-        "image": "/src/assets/images/services/service-1.jpg"
     }
 ]
