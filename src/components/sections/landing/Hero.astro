@@ -3,7 +3,7 @@ import Slides from '@/data/heroSlides.json';
 import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components'
-export const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
+const images = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
 ---
 <section class="relative w-full min-h-[700px] h-screen max-h-[1500px] overflow-hidden section-container-no-margin">
   <div class="carousel-container w-full h-full flex transition-transform duration-500 ease-in-out">
