@@ -9,7 +9,7 @@ import slugify from "slugify";
 <Layout title="Servicios">
   <div class="section-container mt-16 flex flex-col items-center">
     <h1 class="text-5xl font-bold tracking-wider text-blue">SERVICIOS</h1>
-    <p class="text-lg max-w-2xl mb-4">En Mecintrac, fabricamos moldes, troqueles, repuestos y maquinaria de alta calidad. Con un equipo experto y tecnología avanzada, desarrollamos soluciones metálicas precisas y eficientes para diversas industrias.</p>
+    <p class="text-lg max-w-2xl mb-4 text-justify">En Mecintrac, fabricamos moldes, troqueles, repuestos y maquinaria de alta calidad. Con un equipo experto y tecnología avanzada, desarrollamos soluciones metálicas precisas y eficientes para diversas industrias.</p>
 
     {Services.map((service) => (
       <a href={`/servicios/${slugify(service.title, { lower: true, strict: true })}`} class="w-full max-w-2xl">
