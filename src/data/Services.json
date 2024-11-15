@@ -1,22 +1,22 @@
 [
     {
         "title": "Moldes",
-        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "description": "En Mecintrac, fabricamos moldes para una variedad de aplicaciones industriales. Nuestros moldes se adaptan a diferentes materiales metálicos y están elaborados con precisión para asegurar un corte y estampado efectivo. Nos enfocamos en cumplir con las especificaciones requeridas y en ofrecer productos duraderos que contribuyan a un proceso de producción eficiente.",
         "image": "/src/assets/images/services/moldes.jpg"
     },
     {
         "title": "Troqueles",
-        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "description": "En Mecintrac, fabricamos troqueles diseñados para una variedad de aplicaciones industriales. Nuestros troqueles se adaptan a diferentes materiales metálicos y están elaborados con precisión para asegurar un corte y estampado efectivo. Nos enfocamos en cumplir con las especificaciones requeridas y en ofrecer productos duraderos que contribuyan a un proceso de producción eficiente.",
         "image": "/src/assets/images/services/troqueles.png"
     },
     {
         "title": "Repuestos",
-        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "description": "En Mecintrac, fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad. Nuestros repuestos se adaptan a diferentes materiales metálicos y están elaborados con precisión para asegurar un corte y estampado efectivo. Nos enfocamos en cumplir con las especificaciones requeridas y en ofrecer productos duraderos que contribuyan a un proceso de producción eficiente.",
         "image": "/src/assets/images/services/repuestos.png"
     },
     {
         "title": "Desarrollo de Proyectos",
-        "description": "Fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad.",
+        "description": "En Mecintrac, nos especializamos en el desarrollo de proyectos de ingeniería mecánica. Trabajamos en estrecha colaboración con nuestros clientes para entender sus necesidades específicas y crear soluciones personalizadas. Nuestro equipo de ingenieros altamente capacitados utiliza las últimas tecnologías y herramientas para diseñar y fabricar productos que cumplan con los más altos estándares de calidad. Nos enfocamos en la innovación y la eficiencia, asegurando que cada proyecto se complete con precisión y en el tiempo establecido.",
         "image": "/src/assets/images/services/desarrollo-de-proyectos.png"
     }
 ]
