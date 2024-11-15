@@ -31,7 +31,7 @@ const nextService = ServicesData[serviceIndex + 1] || ServicesData[0];
         <button class="block bg-blue text-white text-xl mx-auto px-4 py-2 font-bold rounded-md select-none">Solicitar
           Servicio</button>
       </div>
-      <Image src={images[service!.image].default} alt={service!.title} height={400} inferSize
+      <Image src={images[service!.image].default} alt={service!.title} height={400} inferSize loading="eager"
         class="w-full max-w-lg max-h-[400px] rounded-lg" />
     </div>
 
