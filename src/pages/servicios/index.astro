@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Services from "@/data/Services.json";
 import { Image } from 'astro:assets';
 import { images } from "@/components/sections/landing/Services.astro";
+import slugify from "slugify";
 ---
 
 <Layout title="Servicios">
@@ -11,23 +12,23 @@ import { images } from "@/components/sections/landing/Services.astro";
     <p class="text-lg max-w-2xl mb-4">En Mecintrac, fabricamos moldes, troqueles, repuestos y maquinaria de alta calidad. Con un equipo experto y tecnología avanzada, desarrollamos soluciones metálicas precisas y eficientes para diversas industrias.</p>
 
     {Services.map((service) => (
-      <div class="relative flex rounded-lg w-full max-w-2xl h-[80px] my-3 justify-center items-center">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-wider text-white font-roboto text-center select-none">{service.title}</h2>
-        <Image
-          src={images[service.image].default}
-          alt={service.title}
-          class="w-full h-full object-cover absolute inset-0 z-[-2] rounded-lg"
-          quality={80}
-          loading="eager"
-          widths={[200, 400, 600]}
-          sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 600px"
-          inferSize
-        />
-        <div class="absolute inset-0  flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg z-[-1]">
-        </div> 
-      </div>
+      <a href={`/servicios/${slugify(service.title, { lower: true, strict: true })}`} class="w-full max-w-2xl">
+        <div class="relative flex rounded-lg w-full h-[80px] my-3 justify-center items-center">
+          <h2 class="text-2xl md:text-3xl font-bold tracking-wider text-white font-roboto text-center select-none">{service.title}</h2>
+          <Image
+            src={images[service.image].default}
+            alt={service.title}
+            class="w-full h-full object-cover absolute inset-0 z-[-2] rounded-lg"
+            quality={80}
+            loading="eager"
+            widths={[200, 400, 600]}
+            sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 600px"
+            inferSize
+          />
+          <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg z-[-1]">
+          </div> 
+        </div>
+      </a>
     ))}
   </div>
-  
-
 </Layout>
