@@ -40,26 +40,26 @@ const nextService = ServicesData[serviceIndex + 1] || ServicesData[0];
       <div />
 
       <div class="flex flex-col md:flex-row gap-11 mt-3">
-        <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
+        <a href={`/servicios/${slugify(previousService.title, { lower: true, strict: true })}`} class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
           <Image src={images[previousService.image].default} alt={previousService.title}
-            class="w-full h-full object-cover absolute inset-0 z-[-1] rounded-lg" inferSize loading="lazy"
+            class="w-full h-full object-cover absolute inset-0 z-[-1] rounded-lg select-none" inferSize loading="lazy"
             quality={80} />
           <div
             class="absolute inset-0  flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg">
             <h3 class="text-white text-xl md:text-2xl lg:text-3xl px-2 pb-4 text-center select-none">
               {previousService.title}</h3>
           </div>
-        </div>
-        <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
+        </a>
+        <a href={`/servicios/${slugify(nextService.title, { lower: true, strict: true })}`} class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
           <Image src={images[nextService.image].default} alt={nextService.title}
-            class="w-full h-full object-cover absolute inset-0 z-[-1] rounded-lg" inferSize loading="lazy"
+            class="w-full h-full object-cover absolute inset-0 z-[-1] rounded-lg select-none" inferSize loading="lazy"
             quality={80} />
           <div
             class="absolute inset-0  flex items-end justify-center bg-gradient-to-t from-black/70 to-black/20 rounded-lg">
             <h3 class="text-white text-xl md:text-2xl lg:text-3xl px-2 pb-4 text-center select-none">{nextService.title}
             </h3>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
