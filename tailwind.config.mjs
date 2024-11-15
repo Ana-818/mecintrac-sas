@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'about-blue': "#336589",
         background: "#f1f1f1",
         blue: "#0f4a75",
 		    'light-blue': "#1993c5",
