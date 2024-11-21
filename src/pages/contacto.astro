@@ -1,1 +1,86 @@
-contacto
+---
+import { Image } from "astro:assets"
+import Layout from "@/layouts/Layout.astro"
+import { Icon } from 'astro-icon/components'
+import ContactPageData from "@/data/contactPage.json"
+const contactImage = import.meta.glob('/src/assets/images/contact/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
+---
+<Layout title="Contacto">
+    <div class="section-container mt-16">
+      <div class="flex justify-center">
+        <div class="inline-flex flex-col lg:flex-row items-center lg:justify-center lg:items-start gap-10 p-6 lg:bg-white lg:rounded-lg">
+            <div class="inline-flex flex-col gap-4 justify-start">
+                <h1 class="text-5xl font-bold tracking-wider text-blue">Contacto</h1>
+                <p class="text-lg text-black text-justify max-w-md">
+                    {ContactPageData.description}
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Correo -->
+                    <div class="flex items-center space-x-2">
+                      <div class="p-3 bg-blue rounded-lg">
+                        <Icon name="mdi:email" class="size-6 text-white" />
+                      </div>
+                      <div>
+                        <p class="text-sm font-lalezar tracking-wider font-bold text-blue">Correo</p>
+                        <a href="mailto:administracion@mecintrac.com" class="text-sm text-black break-all">
+                          administracion@mecintrac.com
+                        </a>
+                      </div>
+                    </div>
+                
+                    <!-- Teléfono -->
+                    <div class="flex items-center space-x-2">
+                      <div class="p-3 bg-blue rounded-lg">
+                        <Icon name="mdi:phone" class="size-6 text-white" />
+                      </div>
+                      <div>
+                        <p class="text-sm font-lalezar tracking-wider font-bold text-blue">Teléfono</p>
+                        <a href="tel:+573332273786" class="text-sm text-black break-all">
+                          +57 333 2273786
+                        </a>
+                      </div>
+                    </div>
+                
+                    <!-- Instagram -->
+                    <div class="flex items-center space-x-2">
+                      <div class="p-3 bg-blue rounded-lg">
+                        <Icon name="mdi:instagram" class="size-6 text-white" />
+                      </div>
+                      <div>
+                        <p class="text-sm font-lalezar tracking-wider font-bold text-blue">Instagram</p>
+                        <a href="https://www.instagram.com/mecintrac" target="_blank" class="text-sm text-black break-all">
+                          @mecintrac
+                        </a>
+                      </div>
+                    </div>
+                
+                    <!-- LinkedIn -->
+                    <div class="flex items-center space-x-2">
+                      <div class="p-3 bg-blue rounded-lg">
+                        <Icon name="mdi:linkedin" class="size-6 text-white" />
+                      </div>
+                      <div>
+                        <p class="text-sm font-lalezar tracking-wider font-bold text-blue">LinkedIn</p>
+                        <a href="https://www.linkedin.com/company/mecintrac" target="_blank" class="text-sm text-black break-all">
+                          @mecintrac
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <Image src={contactImage[ContactPageData.image].default} alt="Contacto Mecintrac" height={400} inferSize class="w-full max-w-lg max-h-[450px] rounded-lg" loading="eager" />
+        </div>
+      </div>
+        
+        <iframe
+            title="Mapa de ubicación de Mecintrac"
+            class="w-full max-w-5xl mx-auto max-h-[450px] my-10"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.5617902519239!2d-75.58149003046312!3d6.231112399609816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429f931dc14bb%3A0x645a322df94785da!2sMECINTRAC!5e0!3m2!1ses-419!2sco!4v1732162798924!5m2!1ses-419!2sco"
+            style="border:0;"
+            allowfullscreen=""
+            loading="eager"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</Layout>
