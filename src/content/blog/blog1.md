@@ -1,7 +1,7 @@
 ---
 title: "Blog 1"
 date: "2024-11-21"
-image: "/src/assets/images/blogs/blog1.png"
+image: "/src/assets/images/blogs/blog1.jpg"
 ---
 
 # Blog 1
