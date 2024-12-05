@@ -19,18 +19,17 @@ interface Props {
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let url = window.location.pathname;
-    let urlSegments = url.split("/");
     let navId;
 
     if (url === "/") {
       navId = "inicio";
     } else {
-      navId = url.replace("/", "");
+      navId = url.split("/")[1];
     }
 
     let nav = document.getElementById(navId);
 
-    if (nav) {
+    if (nav && (url === "/" || url.startsWith(`/${navId}`))) {
       nav.classList.remove(
         "text-black",
         "hover:text-neutral-500",
