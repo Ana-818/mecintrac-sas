@@ -47,9 +47,10 @@ export async function getStaticPaths() {
             class="h-full w-full md:w-1/2 object-cover rounded-lg"
             quality={100}
             height={400}
+            loading="eager"
             inferSize
           />
-          <div class="flex flex-col h-1/2 md:h-full items-start justify-start p-2 md:p-3 md:w-1/2">
+          <div class="flex flex-col h-1/2 md:h-full items-start justify-start p-2 md:p-3 md:w-1/2 overflow-hidden">
             <h2 class="text-2xl font-semibold font-roboto text-blue text-start line-clamp-2">
               {post.title}
             </h2>
@@ -64,9 +65,9 @@ export async function getStaticPaths() {
     <nav class="flex justify-between items-center gap-3 mt-12">
       <!-- Previous Button -->
       <a
-        href={currentPage > 1 ? `/blog/pagina/${currentPage - 1}` : '#'}
+        href={currentPage > 1 ? `/blog/pagina/${currentPage - 1}` : '1'}
         class={`flex items-center justify-center w-10 h-10 border rounded ${
-          currentPage === 1 ? 'bg-light-blue cursor-not-allowed' : 'bg-blue'
+          currentPage === 1 ? 'bg-light-blue cursor-not-allowed pointer-events-none' : 'bg-blue'
         } text-white`}
         aria-disabled={currentPage === 1}
       >
@@ -80,9 +81,9 @@ export async function getStaticPaths() {
 
       <!-- Next Button -->
       <a
-        href={currentPage < totalPages ? `/blog/pagina/${currentPage + 1}` : '#'}
+        href={currentPage < totalPages ? `/blog/pagina/${currentPage + 1}` : '1'}
         class={`flex items-center justify-center w-10 h-10 border rounded ${
-          currentPage === totalPages ? 'bg-light-blue cursor-not-allowed' : 'bg-blue'
+          currentPage === totalPages ? 'bg-light-blue cursor-not-allowed pointer-events-none' : 'bg-blue'
         } text-white`}
         aria-disabled={currentPage === totalPages}
       >
