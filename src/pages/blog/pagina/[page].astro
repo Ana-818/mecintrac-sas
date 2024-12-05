@@ -34,11 +34,11 @@ export async function getStaticPaths() {
     </p>
 
     <!-- Blog Posts -->
-    <div class="max-w-sm md:max-w-3xl mx-auto grid gap-4">
+    <div class="flex flex-col max-w-sm md:max-w-3xl mx-auto gap-4">
       {postsToShow.map((post) => (
         <a 
           href={`/blog/${slugify(post.title, { lower: true, strict: true })}`} 
-          class="flex flex-col md:flex-row md:max-h-[300px] bg-white shadow-lg rounded-lg overflow-hidden p-3"
+          class="flex flex-col md:flex-row md:h-[300px] bg-white shadow-lg rounded-lg overflow-hidden p-3"
           title={post.title}
         >
           <Image 
@@ -51,11 +51,13 @@ export async function getStaticPaths() {
             inferSize
           />
           <div class="flex flex-col h-1/2 md:h-full items-start justify-start p-2 md:p-3 md:w-1/2 overflow-hidden">
-            <h2 class="text-2xl font-semibold font-roboto text-blue text-start line-clamp-2">
-              {post.title}
+            <h2 class="text-2xl font-semibold font-roboto text-blue text-start">
+              {post.title.length > 50 ? post.title.slice(0, 50) + '...' : post.title}
             </h2>
             <p class="text-sm text-gray-500 mt-2">{new Date(post.date).toLocaleDateString()}</p>
-            <p class="text-start text-black mt-4 line-clamp-5">{post.text}</p>
+            <p class="text-start text-black mt-4">
+              {post.text.length > 200 ? post.text.slice(0, 220) + '...' : post.text}
+            </p>
           </div>
         </a>
       ))}
@@ -92,26 +94,3 @@ export async function getStaticPaths() {
     </nav>
   </div>
 </Layout>
-
-<style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-5 {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Adjustments for smaller screens */
-  @media (max-width: 384px) {
-    .line-clamp-2 {
-      -webkit-line-clamp: 1;
-    }
-  }
-</style>
