@@ -96,15 +96,9 @@ export async function getStaticPaths() {
 <style>
   .line-clamp-2 {
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  @media (min-width: 385px) {
-    .line-clamp-2 {
-      -webkit-line-clamp: 2;
-    }
   }
 
   .line-clamp-5 {
@@ -112,5 +106,12 @@ export async function getStaticPaths() {
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  /* Adjustments for smaller screens */
+  @media (max-width: 384px) {
+    .line-clamp-2 {
+      -webkit-line-clamp: 1;
+    }
   }
 </style>
