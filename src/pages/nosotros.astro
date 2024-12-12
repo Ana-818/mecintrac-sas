@@ -5,7 +5,7 @@ import { Image } from "astro:assets"
 const teamImage = import.meta.glob('/src/assets/images/about/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
 ---
 <Layout title="Nosotros">
-  <div class="section-container mt-16 flex flex-col">
+  <div class="section-container">
     <h1 class="text-5xl font-bold tracking-wider text-blue text-center">Nosotros</h1>
     <div class="flex flex-col lg:flex-row-reverse gap-10 mt-8 justify-center items-center lg:items-start">
         <div class="flex flex-col lg:flex-row-reverse gap-10 lg:bg-white lg:p-5 lg:rounded-lg">
