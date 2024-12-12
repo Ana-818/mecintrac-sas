@@ -3,21 +3,18 @@
     "title": "MECINTRAC",
     "description": "Somos una empresa dedicada al desarrollo y fabricación de repuestos, mecanismos y equipos en materiales metálicos.",
     "ctaText": "Contáctanos",
-    "bgImage": "/src/assets/images/hero/hero-slide-1.jpg",
-    "url": "/contacto"
+    "bgImage": "/src/assets/images/hero/hero-slide-1.jpg"
   },
   {
     "title": "CALIDAD A TIEMPO",
     "description": "En Mecintrac, ofrecemos soluciones con un firme compromiso con la calidad y la puntualidad. Nos enfocamos en entregar resultados confiables y a tiempo en cada proyecto.",
     "ctaText": "Nuestros proyectos",
-    "bgImage": "/src/assets/images/hero/hero-slide-2.jpg",
-    "url": "/proyectos"
+    "bgImage": "/src/assets/images/hero/hero-slide-2.jpg"
   },
   { 
     "title": "Experiencia y Calidad",
     "description": "Más de 20 años brindando excelencia en fabricación y diseño de piezas metálicas.",
     "ctaText": "Conoce Más",
-    "bgImage": "/src/assets/images/hero/hero-slide-3.jpg",
-    "url": "/nosotros"
+    "bgImage": "/src/assets/images/hero/hero-slide-3.jpg"
   }
 ]
