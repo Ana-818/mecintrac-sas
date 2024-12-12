@@ -30,7 +30,7 @@ const nextService = ServicesData[serviceIndex + 1] || ServicesData[0];
       <div>
         <p class="text-lg max-w-lg mb-4 text-justify">{service!.description}</p>
         <div class="flex justify-center">
-          <Button text="Solicitar servicio" url={`https://wa.me/+573332273876?text=Hola%2C%20quiero%20solicitar%20el%20servicio%20${service!.title}`} px="1rem" textSize="1.2rem" smText="1.2rem" mdText="1.2rem" lgText="1.2rem"/>
+          <Button text="Solicitar servicio" url={`https://wa.me/+573332273876?text=Hola%2C%20quiero%20solicitar%20el%20servicio%20de%20${service!.title}`} px="1rem" textSize="1.2rem" smText="1.2rem" mdText="1.2rem" lgText="1.2rem"/>
         </div>
       </div>
       <Image src={images[service!.image].default} alt={service!.title} height={400} inferSize loading="eager"
