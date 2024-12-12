@@ -41,7 +41,7 @@ const nextBlog = blogData[blogIndex + 1] || blogData[0];
            class="flex flex-col items-center bg-white p-2 rounded-lg max-w-[350px]">
           <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
             <Image src={images[previousBlog.image].default} alt={previousBlog.title}
-              class="w-full h-full object-cover absolute inset-0 rounded-lg select-none" inferSize loading="lazy"
+              class="w-full h-full object-cover absolute inset-0 rounded-lg select-none" height={400} inferSize loading="lazy"
               quality={80} />
           </div>
           <h3 class="mt-2 text-center text-lg font-medium text-blue">{previousBlog.title}</h3>
@@ -50,7 +50,7 @@ const nextBlog = blogData[blogIndex + 1] || blogData[0];
            class="flex flex-col items-center bg-white p-2 rounded-lg max-w-[350px]">
           <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
             <Image src={images[nextBlog.image].default} alt={nextBlog.title}
-              class="w-full h-full object-cover absolute inset-0 rounded-lg select-none" inferSize loading="lazy"
+              class="w-full h-full object-cover absolute inset-0 rounded-lg select-none" height={400} inferSize loading="lazy"
               quality={80} />
           </div>
           <h3 class="mt-2 text-center text-lg font-medium text-blue">{nextBlog.title}</h3>
