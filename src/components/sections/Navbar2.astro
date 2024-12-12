@@ -10,6 +10,8 @@ import "@/assets/styles/global.css";
       MECINTRAC
     </h1>
 
+    <div id="navbar-placeholder" class="hidden"></div>
+    
     <nav
       class="relative select-none mx-2 w-full rounded-[36px] border border-white/40 bg-white/60 px-4 py-3 backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
       aria-label="Global">
@@ -67,6 +69,33 @@ import "@/assets/styles/global.css";
 <script>
   import "@node/preline/dist/preline.js";
   document.addEventListener("DOMContentLoaded", function() {
+    const nav = document.querySelector('nav');
+    const placeholder = document.getElementById('navbar-placeholder');
+    const originalTop = nav!.offsetTop;
+
+    function handleScroll() {
+      const navRect = nav!.getBoundingClientRect();
+      const placeholderRect = placeholder!.getBoundingClientRect();
+      const scrollTop = window.scrollY;
+
+      // Si la nav está a 16px o menos del borde superior
+      if (scrollTop >= originalTop - 16) {
+        console.log('hola');
+        nav!.classList.add('fixed-nav');
+        placeholder!.style.height = `${nav!.offsetHeight}px`;
+        placeholder!.classList.remove('hidden');
+      } 
+      // Volvemos a relativo si el scroll llega a la posición original de la nav
+      else {
+        console.log('adios');
+        nav!.classList.remove('fixed-nav');
+        placeholder!.style.height = '0px';
+        placeholder!.classList.add('hidden');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
     function closeCollapse() {
       const collapse = document.getElementById('navbar-collapse-with-animation');
       const toggleButton = document.getElementById('show-btn');
@@ -95,8 +124,12 @@ import "@/assets/styles/global.css";
 <style>
 .fixed-nav {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 1rem;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  width: calc(100% - 1rem); /* Ajusta esto según necesites */
 }
 </style>
