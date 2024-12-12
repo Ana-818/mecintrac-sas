@@ -1,6 +1,7 @@
 ---
 import Navbar from "@/components/sections/Navbar.astro";
 import FooterSection from "@components/sections/Footer.astro";
+import whatsapp from "@/assets/images/whatsapp-fixed.png";
 import "@/assets/styles/global.css";
 
 interface Props {
@@ -31,7 +32,7 @@ const { title } = Astro.props;
     <div class="fab">
       <a href="https://wa.me/+573332273876"
         target="_blank">
-        <img src="/src/assets/images/whatsapp-fixed.png" alt="WhatsApp Logo">
+        <img src={whatsapp.src} alt="WhatsApp Logo">
       </a>
     </div>
   </body>
