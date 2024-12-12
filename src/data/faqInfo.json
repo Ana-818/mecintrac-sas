@@ -1,34 +1,30 @@
 [
     {
-        "question": "¿Con qué materiales trabaja Mecintrac?",
-        "answer": "En Mecintrac trabajamos principalmente con metal, pero también trabajamos con otros materiales como plásticos de alta resistencia y componentes compuestos."
+        "question": "¿Es necesario entregar un plano para la fabricación de los productos?",
+        "answer": "No es estrictamente necesario, pero si el cliente cuenta con los planos, el proceso se agiliza y se optimizan los costos. Si no tienes planos, nuestro equipo de ingeniería puede desarrollar el diseño y los planos a partir de una muestra o las especificaciones que nos proporciones, asegurando que se cumpla con todas tus necesidades."
     },
     {
-        "question": "¿Qué industrias atiende Mecintrac?",
-        "answer": "Mecintrac atiende industrias como la construcción, minería, manufactura y energía, ofreciendo soluciones especializadas en maquinaria y piezas industriales."
+        "question": "¿Con qué tolerancias se entregan las piezas o repuestos requeridos?",
+        "answer": "Las tolerancias se deben definir desde el proceso de cotización. Si no se especifican, las piezas se fabrican conforme a la norma ISO 2768, que regula las tolerancias para piezas metálicas fabricadas mediante mecanizado CNC. Esto asegura precisión y calidad en todas las piezas que entregamos."
     },
     {
-        "question": "¿Ofrecen servicios de mantenimiento?",
-        "answer": "Sí, en Mecintrac ofrecemos servicios de mantenimiento preventivo y correctivo para asegurar el funcionamiento óptimo de los equipos industriales."
+        "question": "¿Las tolerancias y acabados influyen en el costo del producto?",
+        "answer": "Sí, las tolerancias estrictas y los acabados especiales impactan el costo final del producto. Cuanto mayor es la precisión y los requerimientos de acabado, mayor será el precio debido al tiempo y esfuerzo extra en el proceso. Por ello, es fundamental definir con claridad estos detalles al inicio del proyecto para evitar sobrecostos innecesarios."
     },
     {
-        "question": "¿Cuál es el tiempo de entrega promedio para los pedidos?",
-        "answer": "El tiempo de entrega varía según el tipo de pedido, pero en promedio los proyectos de piezas personalizadas toman entre 2 a 4 semanas."
+        "question": "¿Si necesito una pieza con tratamientos térmicos o superficiales, Mecintrac la fabrica?",
+        "answer": "Sí, Mecintrac SAS puede fabricar piezas metálicas con tratamientos térmicos y superficiales según lo requerido. Nos aseguramos de que cada pieza cumpla con los estándares de calidad y apariencia especificados por el cliente, garantizando un producto final óptimo."
     },
     {
-        "question": "¿Puedo solicitar piezas personalizadas?",
-        "answer": "Sí, Mecintrac ofrece la opción de diseñar y fabricar piezas personalizadas según las especificaciones del cliente."
+        "question": "¿Realizan la parte eléctrica y de control en el desarrollo de equipos?",
+        "answer": "El alcance del desarrollo de equipos, incluyendo componentes eléctricos y de control, se acuerda previamente con el cliente. Si se requiere que el equipo sea entregado en funcionamiento, nos encargamos de todas las etapas del proyecto, incluyendo la integración de sistemas eléctricos y de control."
     },
     {
-        "question": "¿Qué certificaciones tiene Mecintrac?",
-        "answer": "Mecintrac cuenta con certificaciones ISO 9001 y cumple con estándares internacionales de calidad y seguridad en la fabricación de piezas industriales."
+        "question": "¿Solo fabrican piezas metálicas por mecanizado CNC?",
+        "answer": "No, en Mecintrac SAS también fabricamos piezas metálicas mediante otros procesos como centrifugado, troquelado, inyección de metales y más. El proceso utilizado dependerá de los requisitos específicos de calidad y volumen del producto, garantizando que siempre entregamos piezas con la calidad acordada."
     },
     {
-        "question": "¿Dónde se encuentran ubicados?",
-        "answer": "Mecintrac tiene su sede principal en Medellín, Colombia, pero atendemos clientes en todo el país y en mercados internacionales."
-    },
-    {
-        "question": "¿Ofrecen asesoría técnica?",
-        "answer": "Sí, nuestro equipo de ingenieros y técnicos está disponible para brindar asesoría técnica en el desarrollo de proyectos industriales."
+        "question": "¿Donde se encuentra ubicado Mecintrac?",
+        "answer": "Mecintrac SAS se encuentra ubicado en la ciudad de Medellín, Colombia. La dirección es Cl. 29D #55-121, Guayabal, Medellín, Antioquia."
     }
 ]

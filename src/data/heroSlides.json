@@ -1,20 +1,14 @@
 [
   {
     "title": "MECINTRAC",
-    "description": "Somos una empresa dedicada al desarrollo y fabricación de repuestos, mecanismos y equipos en materiales metálicos.",
-    "ctaText": "Contáctanos",
+    "description": "En Mecintrac, transformamos metal en soluciones precisas y confiables. Más de 15 años entregando resultados excepcionales, siempre puntuales, siempre a la altura de tus expectativas.",
+    "ctaText": "Cotiza ya",
     "bgImage": "/src/assets/images/hero/hero-slide-1.jpg"
   },
   {
     "title": "CALIDAD A TIEMPO",
-    "description": "En Mecintrac, ofrecemos soluciones con un firme compromiso con la calidad y la puntualidad. Nos enfocamos en entregar resultados confiables y a tiempo en cada proyecto.",
-    "ctaText": "Nuestros proyectos",
+    "description": "Moldes, troqueles y piezas metálicas diseñadas con precisión, entregadas siempre a tiempo. Confía en Mecintrac, donde la tecnología y la experiencia se unen para impulsar tu éxito.",
+    "ctaText": "Contactanos",
     "bgImage": "/src/assets/images/hero/hero-slide-2.jpg"
-  },
-  { 
-    "title": "Experiencia y Calidad",
-    "description": "Más de 20 años brindando excelencia en fabricación y diseño de piezas metálicas.",
-    "ctaText": "Conoce Más",
-    "bgImage": "/src/assets/images/hero/hero-slide-3.jpg"
   }
 ]

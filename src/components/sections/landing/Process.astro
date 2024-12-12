@@ -15,7 +15,7 @@ const images = import.meta.glob('/src/assets/images/process/*.{webp,png,jpg,jpeg
           <h3 class="text-9xl text-blue">{index + 1}</h3>
           <div class="flex flex-col">
             <h4 class="text-4xl text-blue">{step.title}</h4>
-            <p class="max-w-[22ch]">{step.description}</p>
+            <p class="max-w-[30ch]">{step.description}</p>
           </div>
         </div>
         <Image src={images[step.image].default} alt={step.title} height={300} inferSize class="rounded-full w-64 h-64 object-cover" />
