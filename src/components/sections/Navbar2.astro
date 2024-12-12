@@ -5,8 +5,8 @@ import "@/assets/styles/global.css";
 ---
 
 <div class="relative bg-blue">
-  <header class="section-container pt-4 pb-12">
-    <h1 class="text-center font-bold text-white mb-8 text-6xl">
+  <header class="section-container pt-4 pb-6">
+    <h1 class="text-center font-bold text-white text-6xl">
       MECINTRAC
     </h1>
 
@@ -71,23 +71,38 @@ import "@/assets/styles/global.css";
   document.addEventListener("DOMContentLoaded", function() {
     const nav = document.querySelector('nav');
     const placeholder = document.getElementById('navbar-placeholder');
+    const collapse = document.getElementById('navbar-collapse-with-animation');
     const originalTop = nav!.offsetTop;
 
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if ((mutation.target as HTMLElement).classList.contains('show')) {
+          updatePlaceholderHeight();
+        } else {
+          setTimeout(updatePlaceholderHeight, 300); 
+        }
+      });
+    });
+
+    observer.observe(collapse!, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    function updatePlaceholderHeight() {
+      if (nav!.classList.contains('fixed-nav')) {
+        placeholder!.style.height = `${nav!.offsetHeight}px`;
+      }
+    }
+
     function handleScroll() {
-      const navRect = nav!.getBoundingClientRect();
-      const placeholderRect = placeholder!.getBoundingClientRect();
       const scrollTop = window.scrollY;
 
-      // Si la nav está a 16px o menos del borde superior
       if (scrollTop >= originalTop - 16) {
-        console.log('hola');
         nav!.classList.add('fixed-nav');
-        placeholder!.style.height = `${nav!.offsetHeight}px`;
+        updatePlaceholderHeight();
         placeholder!.classList.remove('hidden');
-      } 
-      // Volvemos a relativo si el scroll llega a la posición original de la nav
-      else {
-        console.log('adios');
+      } else {
         nav!.classList.remove('fixed-nav');
         placeholder!.style.height = '0px';
         placeholder!.classList.add('hidden');
@@ -130,6 +145,5 @@ import "@/assets/styles/global.css";
   z-index: 1000;
   transition: all 0.3s ease;
   margin: 0 auto;
-  width: calc(100% - 1rem); /* Ajusta esto según necesites */
 }
 </style>
