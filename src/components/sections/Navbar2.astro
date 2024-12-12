@@ -1,0 +1,102 @@
+---
+import NavLink from "@components/ui/NavLink.astro";
+import Strings from "@/data/navigationNavbar.json";
+import "@/assets/styles/global.css";
+---
+
+<div class="relative bg-blue">
+  <header class="section-container pt-4 pb-12">
+    <h1 class="text-center font-bold text-white mb-8 text-6xl">
+      MECINTRAC
+    </h1>
+
+    <nav
+      class="relative select-none mx-2 w-full rounded-[36px] border border-white/40 bg-white/60 px-4 py-3 backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
+      aria-label="Global">
+      <div class="flex items-center justify-between">
+        <a href="/" class="absolute left-3 flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M14.31 8l5.74 9.94M9.69 8l-5.74 9.94" />
+            <line x1="12" y1="2" x2="12" y2="22" />
+          </svg>
+          <span class="text-lg font-bold text-black hidden md:block">MECINTRAC</span>
+        </a>
+
+        <span class="text-lg font-bold text-black md:hidden absolute left-1/2 transform -translate-x-1/2">
+          MECINTRAC
+        </span>
+
+        <div class="ml-auto mr-5 md:hidden">
+          <button type="button"
+            class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-neutral-600 transition duration-300 hover:bg-neutral-200 disabled:pointer-events-none disabled:opacity-50"
+            data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation"
+            aria-label="Toggle navigation" id="show-btn">
+            <svg class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="3" x2="21" y1="6" y2="6"></line>
+              <line x1="3" x2="21" y1="12" y2="12"></line>
+              <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+            <svg class="hidden h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:block" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="navbar-collapse-with-animation"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block">
+        <div
+        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:w-full md:flex-row md:items-center md:justify-center md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7">
+        {Strings.map(link => (
+        <NavLink url={link.url} name={link.name} />
+            ))}
+        </div>
+      </div>
+
+    </nav>
+  </header>
+</div>
+
+<script>
+  import "@node/preline/dist/preline.js";
+  document.addEventListener("DOMContentLoaded", function() {
+    function closeCollapse() {
+      const collapse = document.getElementById('navbar-collapse-with-animation');
+      const toggleButton = document.getElementById('show-btn');
+      if (collapse && collapse.classList.contains('open')) {
+        toggleButton?.click();
+      }
+    }
+
+    document.addEventListener('click', function(event) {
+      const collapse = document.getElementById('navbar-collapse-with-animation');
+      const toggleButton = document.getElementById('show-btn');
+
+      if (collapse && toggleButton && !collapse.contains(event.target as Node) && !toggleButton.contains(event.target as Node)) {
+        closeCollapse();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCollapse();
+      }
+    });
+  });
+</script>
+
+<style>
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+</style>
