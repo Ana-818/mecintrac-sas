@@ -27,6 +27,13 @@ const { title } = Astro.props;
     <div class="page-footer">
       <FooterSection />
     </div>
+
+    <div class="fab">
+      <a href="https://wa.me/+573332273876"
+        target="_blank">
+        <img src="/src/assets/images/whatsapp-fixed.png" alt="WhatsApp Logo">
+      </a>
+    </div>
   </body>
 </html>
 
@@ -53,4 +60,22 @@ const { title } = Astro.props;
   .page-footer {
     flex-shrink: 0;
   }
+
+  .fab {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.fab img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.7;
+}
 </style>
