@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import slugify from "slugify";
 import blogData from "@/data/blogs.json";
 import { Image } from "astro:assets";
+import DoubleTitle from "@/components/ui/DoubleTitle.astro";
 
 const images = import.meta.glob('/src/assets/images/blogs/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
 
@@ -32,6 +33,30 @@ const nextBlog = blogData[blogIndex + 1] || blogData[0];
       class="w-full max-w-2xl max-h-[400px] rounded-lg object-cover" />
     </div>
     <p class="text-lg max-w-4xl mb-4 text-start mt-4">{blog!.text}</p>
+    <div class="mt-14">
+      <DoubleTitle blackText="OTROS" blueText="BLOGS" />
+
+      <div class="flex flex-col md:flex-row gap-11 mt-3">
+        <a href={`/blog/${slugify(previousBlog.title, { lower: true, strict: true })}`} 
+           class="flex flex-col items-center bg-white p-2 rounded-lg max-w-[350px]">
+          <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
+            <Image src={images[previousBlog.image].default} alt={previousBlog.title}
+              class="w-full h-full object-cover absolute inset-0 rounded-lg select-none" inferSize loading="lazy"
+              quality={80} />
+          </div>
+          <h3 class="mt-2 text-center text-lg font-medium text-blue">{previousBlog.title}</h3>
+        </a>
+        <a href={`/blog/${slugify(nextBlog.title, { lower: true, strict: true })}`} 
+           class="flex flex-col items-center bg-white p-2 rounded-lg max-w-[350px]">
+          <div class="relative rounded-lg w-[250px] h-[250px] sm:w-[300px] sm:h-[250px] md:w-[300px] md:h-[200px]">
+            <Image src={images[nextBlog.image].default} alt={nextBlog.title}
+              class="w-full h-full object-cover absolute inset-0 rounded-lg select-none" inferSize loading="lazy"
+              quality={80} />
+          </div>
+          <h3 class="mt-2 text-center text-lg font-medium text-blue">{nextBlog.title}</h3>
+        </a>
+      </div>
+    </div>
   </div>
 </Layout>
 
