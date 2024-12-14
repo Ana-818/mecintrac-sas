@@ -6,28 +6,6 @@ const projectImage = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg,w
 
 // Generar un conjunto único de etiquetas
 const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
-
-// Asignar un ID a cada proyecto
-const projectsWithId = projects.map((project, index) => ({ ...project, id: index + 1 }));
-
-// Obtener el número de página actual desde la URL
-const currentPage = parseInt(Astro.url.searchParams.get('page') || '1', 10);
-
-// Obtener la etiqueta seleccionada desde la URL
-const selectedTag = Astro.url.searchParams.get('tag') || 'Todas';
-
-// Filtrar proyectos por la etiqueta seleccionada
-const filteredProjects = selectedTag === 'Todas' ? projectsWithId : projectsWithId.filter(project => project.tag === selectedTag);
-
-// Lógica de paginación
-const itemsPerPage = 6; // Número de proyectos por página
-const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
-const startIndex = (currentPage - 1) * itemsPerPage;
-const endIndex = startIndex + itemsPerPage;
-const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
-
-// Debug: Mostrar paginatedProjects en la consola
-console.log(paginatedProjects);
 ---
 
 <Layout title="Proyectos">
@@ -42,9 +20,9 @@ console.log(paginatedProjects);
       ))}
     </div>
 
-    <div class="flex flex-wrap justify-center mt-8 max-w-5xl">
-      {paginatedProjects.map((project, index) => (
-        <div class="m-4 flex flex-col items-start">
+    <div id="projects-container" class="flex flex-wrap justify-center mt-8 max-w-5xl">
+      {projects.map((project, index) => (
+        <div class="project-item m-4 flex flex-col items-start" data-index={index}>
           <Image 
             src={projectImage[project.image].default} 
             alt={project.tag} 
@@ -59,11 +37,55 @@ console.log(paginatedProjects);
 
     <!-- Controles de paginación -->
     <div class="flex justify-center mt-4">
-      {Array.from({ length: totalPages }, (_, i) => (
-        <a href={`?page=${i + 1}&tag=${selectedTag}`} class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">
-          {i + 1}
-        </a>
-      ))}
+      <button id="prev-btn" class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">&lt;</button>
+      <button id="next-btn" class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">&gt;</button>
     </div>
   </div>
+
+  <script>
+    const projectsPerPage = 6; // Number of projects per page
+    const totalPages = Math.ceil(document.querySelectorAll('.project-item').length / projectsPerPage);
+    let currentPage = 1;
+
+    function updateProjectsVisibility() {
+      const projects = document.querySelectorAll('.project-item');
+      projects.forEach((project, index) => {
+        (project as HTMLElement).style.display = (index >= (currentPage - 1) * projectsPerPage && index < currentPage * projectsPerPage) ? '' : 'none';
+      });
+    }
+    function updatePaginationControls() {
+      const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+      const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+      if (prevBtn && nextBtn) {
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+      }
+    }
+
+    const prevBtn = document.getElementById('prev-btn');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updateProjectsVisibility();
+        updatePaginationControls();
+      }
+    });
+    }
+
+    const nextBtn = document.getElementById('next-btn');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          updateProjectsVisibility();
+          updatePaginationControls();
+      }
+    });
+    }
+
+    // Initial setup
+    updateProjectsVisibility();
+    updatePaginationControls();
+  </script>
 </Layout>
