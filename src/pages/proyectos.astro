@@ -1,6 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import projects from "@/data/projects.json"
+import { Image } from "astro:assets"
+const projectImage = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
 
 const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
 ---
@@ -14,6 +16,21 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
       <button class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">Todas</button>
       {uniqueTags.map(tag => (
         <button class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">{tag}</button>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap justify-center mt-8 max-w-5xl">
+      {projects.map(project => (
+        <div class="m-4 flex flex-col items-start">
+          <Image 
+            src={projectImage[project.image].default} 
+            alt={project.tag} 
+            width={400}
+            inferSize
+            class="max-w-[300px] max-h-[300px] object-cover rounded-lg" 
+          />
+          <span class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full select-none">{project.tag}</span>
+        </div>
       ))}
     </div>
   </div>
