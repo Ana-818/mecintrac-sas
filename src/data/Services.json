@@ -1,12 +1,12 @@
 [
     {
         "title": "Moldes",
-        "description": "En Mecintrac, fabricamos moldes para una variedad de aplicaciones industriales. Nuestros moldes se adaptan a diferentes materiales metálicos y están elaborados con precisión para asegurar un corte y estampado efectivo. Nos enfocamos en cumplir con las especificaciones requeridas y en ofrecer productos duraderos que contribuyan a un proceso de producción eficiente.",
+        "description": "Desarrollamos piezas metálicas de alta precisión combinando diferentes procesos de transformación para entregar productos de calidad, adaptados a las especificaciones de nuestros clientes, cumpliendo con los tiempos y requerimientos acordados.",
         "image": "/src/assets/images/services/moldes.jpg"
     },
     {
         "title": "Troqueles",
-        "description": "En Mecintrac, fabricamos troqueles diseñados para una variedad de aplicaciones industriales. Nuestros troqueles se adaptan a diferentes materiales metálicos y están elaborados con precisión para asegurar un corte y estampado efectivo. Nos enfocamos en cumplir con las especificaciones requeridas y en ofrecer productos duraderos que contribuyan a un proceso de producción eficiente.",
+        "description": "En Mecintrac fabricamos troqueles utilizando materiales especializados que se ajustan a la aplicación y vida útil requerida. Ofrecemos un servicio integral que abarca desde el diseño completo del proyecto, adaptándonos también a diseños preexistentes, hasta el mecanizado y ensamble de las piezas. Además, incluimos la aplicación de tratamientos térmicos y el pulido final. Nuestra tecnología y experiencia nos permiten garantizar soluciones personalizadas que satisfacen las necesidades específicas de cada cliente.",
         "image": "/src/assets/images/services/troqueles.png"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
         "title": "Desarrollo de Proyectos",
-        "description": "En Mecintrac, nos especializamos en el desarrollo de proyectos de ingeniería mecánica. Trabajamos en estrecha colaboración con nuestros clientes para entender sus necesidades específicas y crear soluciones personalizadas. Nuestro equipo de ingenieros altamente capacitados utiliza las últimas tecnologías y herramientas para diseñar y fabricar productos que cumplan con los más altos estándares de calidad. Nos enfocamos en la innovación y la eficiencia, asegurando que cada proyecto se complete con precisión y en el tiempo establecido.",
+        "description": "Contamos con un equipo especializado que diseña y fabrica equipos o mecanismos que ofrecen soluciones integrales a los desafíos de nuestros clientes. Apoyados en software avanzado, maquinaria tecnológica y una sólida red de proveedores, entregamos proyectos confiables y de alta calidad.",
         "image": "/src/assets/images/services/desarrollo-de-proyectos.png"
     }
 ]
