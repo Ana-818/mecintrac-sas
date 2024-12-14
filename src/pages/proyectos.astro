@@ -14,9 +14,9 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
     <p class="text-lg text-center max-w-2xl mt-2">En Mecintrac, desarrollamos proyectos en diversas industrias, destacando nuestro compromiso con la calidad y la eficiencia en cada solución entregada.</p>
     
     <div class="flex flex-wrap justify-center max-w-2xl mt-4">
-      <a href="?tag=Todas" class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">Todas</a>
+      <a href="?tag=Todas" class="tag-link m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">Todas</a>
       {uniqueTags.map(tag => (
-        <a href={`?tag=${tag}`} class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">{tag}</a>
+        <a href={`?tag=${tag}`} class="tag-link m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">{tag}</a>
       ))}
     </div>
 
@@ -43,49 +43,83 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
   </div>
 
   <script>
-    const projectsPerPage = 6; // Number of projects per page
-    const totalPages = Math.ceil(document.querySelectorAll('.project-item').length / projectsPerPage);
-    let currentPage = 1;
+    document.addEventListener('DOMContentLoaded', () => {
+      const projectsPerPage = 6;
+      let currentPage = 1;
+      let currentTag = 'Todas';
 
-    function updateProjectsVisibility() {
-      const projects = document.querySelectorAll('.project-item');
-      projects.forEach((project, index) => {
-        (project as HTMLElement).style.display = (index >= (currentPage - 1) * projectsPerPage && index < currentPage * projectsPerPage) ? '' : 'none';
-      });
-    }
-    function updatePaginationControls() {
-      const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
-      const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
-      if (prevBtn && nextBtn) {
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === totalPages;
+      function updateProjectsVisibility() {
+        const projects = document.querySelectorAll('.project-item');
+        let visibleCount = 0;
+        projects.forEach((project, index) => {
+          const projectTag = project.querySelector('span')?.textContent ?? '';
+          const matchesTag = currentTag === 'Todas' || projectTag === currentTag;
+          const isVisible = matchesTag && visibleCount >= (currentPage - 1) * projectsPerPage && visibleCount < currentPage * projectsPerPage;
+          if (matchesTag) visibleCount++;
+          (project as HTMLElement).style.display = isVisible ? '' : 'none';
+        });
       }
-    }
 
-    const prevBtn = document.getElementById('prev-btn');
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
+      function updatePaginationControls() {
+        const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+        const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+        const projects = document.querySelectorAll('.project-item');
+        const totalProjects = Array.from(projects).filter(project => {
+          const projectTag = project.querySelector('span')?.textContent ?? '';
+          return currentTag === 'Todas' || projectTag === currentTag;
+        }).length;
+        const totalPages = Math.ceil(totalProjects / projectsPerPage);
+
+        if (prevBtn && nextBtn) {
+          prevBtn.disabled = currentPage === 1;
+          nextBtn.disabled = currentPage === totalPages;
+        }
+      }
+
+      function setTag(tag: string) {
+        currentTag = tag;
+        currentPage = 1;
         updateProjectsVisibility();
         updatePaginationControls();
       }
-    });
-    }
 
-    const nextBtn = document.getElementById('next-btn');
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-          currentPage++;
-          updateProjectsVisibility();
-          updatePaginationControls();
+      document.querySelectorAll('.tag-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          setTag(link.textContent || '');
+        });
+      });
+
+      const prevBtn = document.getElementById('prev-btn');
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            updateProjectsVisibility();
+            updatePaginationControls();
+          }
+        });
       }
-    });
-    }
 
-    // Initial setup
-    updateProjectsVisibility();
-    updatePaginationControls();
+      const nextBtn = document.getElementById('next-btn');
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          const projects = document.querySelectorAll('.project-item');
+          const totalProjects = Array.from(projects).filter(project => {
+            const projectTag = project.querySelector('span')?.textContent ?? '';
+            return currentTag === 'Todas' || projectTag === currentTag;
+          }).length;
+          const totalPages = Math.ceil(totalProjects / projectsPerPage);
+          if (currentPage < totalPages) {
+            currentPage++;
+            updateProjectsVisibility();
+            updatePaginationControls();
+          }
+        });
+      }
+
+      updateProjectsVisibility();
+      updatePaginationControls();
+    });
   </script>
 </Layout>
