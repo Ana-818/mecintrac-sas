@@ -1,18 +1,70 @@
 [
     {
-        "name": "Asocaba",
-        "logo": "/src/assets/images/clients/asocaba-logo.webp"
+        "name": "Agrofrut",
+        "logo": "/src/assets/images/clients/agrofrut.png"
     },
     {
-        "name": "EPM",
-        "logo": "/src/assets/images/clients/epm-logo.webp"
+        "name": "Alico",
+        "logo": "/src/assets/images/clients/Alico.png"
     },
     {
-        "name": "Gointegro",
-        "logo": "/src/assets/images/clients/gointegro-logo.webp"
+        "name": "Alqueria",
+        "logo": "/src/assets/images/clients/alqueria.webp"
     },
     {
-        "name": "Indere",
-        "logo": "/src/assets/images/clients/indere-logo.webp"
+        "name": "Botero Soto",
+        "logo": "/src/assets/images/clients/botero-soto.png"
+    },
+    {
+        "name": "Dispromedics",
+        "logo": "/src/assets/images/clients/dispromedics.png"
+    },
+    {
+        "name": "Empaquetaduras y empaques",
+        "logo": "/src/assets/images/clients/empaquetaduras.png"
+    },
+    {
+        "name": "Forjas Bolivar",
+        "logo": "/src/assets/images/clients/forjas.png"
+    },
+    {
+        "name": "Goja",
+        "logo": "/src/assets/images/clients/goja.png"
+    },
+    {
+        "name": "Grupo Al",
+        "logo": "/src/assets/images/clients/grupoal.png"
+    },
+    {
+        "name": "Ilunion",
+        "logo": "/src/assets/images/clients/ilunion.png"
+    },
+    {
+        "name": "Kent",
+        "logo": "/src/assets/images/clients/kent.png"
+    },
+    {
+        "name": "Petpack",
+        "logo": "/src/assets/images/clients/petpack.png"
+    },
+    {
+        "name": "Proyecciones plásticas",
+        "logo": "/src/assets/images/clients/plasticos.png"
+    },
+    {
+        "name": "Sealco",
+        "logo": "/src/assets/images/clients/sealco.png"
+    },
+    {
+        "name": "Talsa",
+        "logo": "/src/assets/images/clients/Talsa.png"
+    },
+    {
+        "name": "Universidad de Antioquia",
+        "logo": "/src/assets/images/clients/uantioquia.png"
+    },
+    {
+        "name": "Vitagro",
+        "logo": "/src/assets/images/clients/vitagro.png"
     }
 ]
