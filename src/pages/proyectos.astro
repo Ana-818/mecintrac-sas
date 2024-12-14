@@ -76,6 +76,18 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
         if (prevBtn && nextBtn) {
           prevBtn.disabled = currentPage === 1;
           nextBtn.disabled = currentPage === totalPages;
+
+          if (prevBtn.disabled) {
+            prevBtn.classList.add('bg-light-blue');
+          } else {
+            prevBtn.classList.remove('bg-light-blue');
+          }
+
+          if (nextBtn.disabled) {
+            nextBtn.classList.add('bg-light-blue');
+          } else {
+            nextBtn.classList.remove('bg-light-blue');
+          }
         }
 
         if (pageIndicator) {
