@@ -4,7 +4,30 @@ import projects from "@/data/projects.json"
 import { Image } from "astro:assets"
 const projectImage = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
 
+// Generar un conjunto único de etiquetas
 const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
+
+// Asignar un ID a cada proyecto
+const projectsWithId = projects.map((project, index) => ({ ...project, id: index + 1 }));
+
+// Obtener el número de página actual desde la URL
+const currentPage = parseInt(Astro.url.searchParams.get('page') || '1', 10);
+
+// Obtener la etiqueta seleccionada desde la URL
+const selectedTag = Astro.url.searchParams.get('tag') || 'Todas';
+
+// Filtrar proyectos por la etiqueta seleccionada
+const filteredProjects = selectedTag === 'Todas' ? projectsWithId : projectsWithId.filter(project => project.tag === selectedTag);
+
+// Lógica de paginación
+const itemsPerPage = 6; // Número de proyectos por página
+const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
+
+// Debug: Mostrar paginatedProjects en la consola
+console.log(paginatedProjects);
 ---
 
 <Layout title="Proyectos">
@@ -13,14 +36,14 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
     <p class="text-lg text-center max-w-2xl mt-2">En Mecintrac, desarrollamos proyectos en diversas industrias, destacando nuestro compromiso con la calidad y la eficiencia en cada solución entregada.</p>
     
     <div class="flex flex-wrap justify-center max-w-2xl mt-4">
-      <button class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">Todas</button>
+      <a href="?tag=Todas" class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">Todas</a>
       {uniqueTags.map(tag => (
-        <button class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">{tag}</button>
+        <a href={`?tag=${tag}`} class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">{tag}</a>
       ))}
     </div>
 
     <div class="flex flex-wrap justify-center mt-8 max-w-5xl">
-      {projects.map(project => (
+      {paginatedProjects.map((project, index) => (
         <div class="m-4 flex flex-col items-start">
           <Image 
             src={projectImage[project.image].default} 
@@ -31,6 +54,15 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
           />
           <span class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full select-none">{project.tag}</span>
         </div>
+      ))}
+    </div>
+
+    <!-- Controles de paginación -->
+    <div class="flex justify-center mt-4">
+      {Array.from({ length: totalPages }, (_, i) => (
+        <a href={`?page=${i + 1}&tag=${selectedTag}`} class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">
+          {i + 1}
+        </a>
       ))}
     </div>
   </div>
