@@ -28,6 +28,7 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
             alt={project.tag} 
             width={400}
             inferSize
+            loading="lazy"
             class="max-w-[300px] max-h-[300px] object-cover rounded-lg" 
           />
           <span class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full select-none">{project.tag}</span>
@@ -87,6 +88,17 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
         currentPage = 1;
         updateProjectsVisibility();
         updatePaginationControls();
+        updateTagStyles();
+      }
+
+      function updateTagStyles() {
+        document.querySelectorAll('.tag-link').forEach(link => {
+          if (link.textContent === currentTag) {
+            link.classList.add('bg-blue', 'text-white');
+          } else {
+            link.classList.remove('bg-blue', 'text-white');
+          }
+        });
       }
 
       document.querySelectorAll('.tag-link').forEach(link => {
@@ -126,6 +138,7 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
 
       updateProjectsVisibility();
       updatePaginationControls();
+      updateTagStyles();
     });
   </script>
 </Layout>
