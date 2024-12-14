@@ -36,10 +36,12 @@ const images = import.meta.glob('/src/assets/images/clients/*.{webp,png,jpg,jpeg
     clonedCarousel.setAttribute('aria-hidden', 'true');
     innerCarousel!.parentNode?.appendChild(clonedCarousel);
   }
-  
   const innerSliders = document.querySelectorAll('.inner-slider');
+  const numClients = await import('@data/clientsLogos.json').then(m => m.default.length);
+  const animationDuration = 10 + (2*numClients);
 
-  innerSliders.forEach((innerSlider) => {
+  innerSliders.forEach((innerSlider: Element) => {
+    (innerSlider as HTMLElement).style.animationDuration = `${animationDuration}s`;
     innerSlider.classList.add('animate-scroll');
   });
 </script>
