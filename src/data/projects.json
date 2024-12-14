@@ -1,14 +1,14 @@
 [
-    { "image": "/src/assets/images/hero/hero-slide-1.jpg", "tag": "Medica" },
-    { "image": "/src/assets/images/hero/hero-slide-2.jpg", "tag": "Alimenticia" },
-    { "image": "/src/assets/images/hero/hero-slide-3.jpg", "tag": "Textil" },
-    { "image": "/src/assets/images/hero/hero-slide-1.jpg", "tag": "Constructor" },
-    { "image": "/src/assets/images/hero/hero-slide-2.jpg", "tag": "Automotriz" },
-    { "image": "/src/assets/images/hero/hero-slide-3.jpg", "tag": "Carga o Transporte" },
-    { "image": "/src/assets/images/hero/hero-slide-1.jpg", "tag": "Medica" },
-    { "image": "/src/assets/images/hero/hero-slide-2.jpg", "tag": "Alimenticia" },
-    { "image": "/src/assets/images/hero/hero-slide-3.jpg", "tag": "Textil" },
-    { "image": "/src/assets/images/hero/hero-slide-1.jpg", "tag": "Constructor" },
-    { "image": "/src/assets/images/hero/hero-slide-2.jpg", "tag": "Automotriz" },
-    { "image": "/src/assets/images/hero/hero-slide-3.jpg", "tag": "Carga o Transport" }
+    { "image": "/src/assets/images/projects/hero-slide-1.jpg", "tag": "Medica" },
+    { "image": "/src/assets/images/projects/hero-slide-2.jpg", "tag": "Alimenticia" },
+    { "image": "/src/assets/images/projects/hero-slide-3.jpg", "tag": "Textil" },
+    { "image": "/src/assets/images/projects/hero-slide-1.jpg", "tag": "Constructor" },
+    { "image": "/src/assets/images/projects/hero-slide-2.jpg", "tag": "Automotriz" },
+    { "image": "/src/assets/images/projects/hero-slide-3.jpg", "tag": "Carga o Transporte" },
+    { "image": "/src/assets/images/projects/hero-slide-1.jpg", "tag": "Medica" },
+    { "image": "/src/assets/images/projects/hero-slide-2.jpg", "tag": "Alimenticia" },
+    { "image": "/src/assets/images/projects/hero-slide-3.jpg", "tag": "Textil" },
+    { "image": "/src/assets/images/projects/hero-slide-1.jpg", "tag": "Constructor" },
+    { "image": "/src/assets/images/projects/hero-slide-2.jpg", "tag": "Automotriz" },
+    { "image": "/src/assets/images/projects/hero-slide-3.jpg", "tag": "Carga o Transport" }
 ] 

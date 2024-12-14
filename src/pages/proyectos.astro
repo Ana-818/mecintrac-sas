@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import projects from "@/data/projects.json"
 import { Image } from "astro:assets"
-const projectImage = import.meta.glob('/src/assets/images/hero/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
+const projectImage = import.meta.glob('/src/assets/images/projects/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
 
 // Generar un conjunto único de etiquetas
 const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
