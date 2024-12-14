@@ -37,8 +37,9 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
 
     <!-- Controles de paginación -->
     <div class="flex justify-center mt-4">
-      <button id="prev-btn" class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">&lt;</button>
-      <button id="next-btn" class="m-2 px-4 py-2 text-blue border-blue border-2 rounded-full">&gt;</button>
+      <button id="prev-btn" class="flex items-center justify-center w-10 h-10 border rounded bg-blue text-white m-2">&lt;</button>
+      <span id="page-indicator" class="flex items-center justify-center m-2 text-lg text-blue"></span>
+      <button id="next-btn" class="flex items-center justify-center w-10 h-10 border rounded bg-blue text-white m-2">&gt;</button>
     </div>
   </div>
 
@@ -63,6 +64,7 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
       function updatePaginationControls() {
         const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
         const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+        const pageIndicator = document.getElementById('page-indicator') as HTMLSpanElement;
         const projects = document.querySelectorAll('.project-item');
         const totalProjects = Array.from(projects).filter(project => {
           const projectTag = project.querySelector('span')?.textContent ?? '';
@@ -73,6 +75,10 @@ const uniqueTags = Array.from(new Set(projects.map(project => project.tag)));
         if (prevBtn && nextBtn) {
           prevBtn.disabled = currentPage === 1;
           nextBtn.disabled = currentPage === totalPages;
+        }
+
+        if (pageIndicator) {
+          pageIndicator.textContent = `Página ${currentPage} de ${totalPages}`;
         }
       }
 
