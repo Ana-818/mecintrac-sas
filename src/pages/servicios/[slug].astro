@@ -33,7 +33,7 @@ const nextService = ServicesData[serviceIndex + 1] || ServicesData[0];
           <Button text="Solicitar servicio" url={`https://wa.me/+573332273876?text=Hola%2C%20quiero%20solicitar%20el%20servicio%20de%20${service!.title}`} px="1rem" textSize="1.2rem" smText="1.2rem" mdText="1.2rem" lgText="1.2rem"/>
         </div>
       </div>
-      <Image src={images[service!.image].default} alt={service!.title} height={400} inferSize loading="eager"
+      <Image src={images[service!.image].default} alt={service!.title} height={1000} inferSize loading="eager"
         class="w-full max-w-lg max-h-[400px] rounded-lg" />
     </div>
 
