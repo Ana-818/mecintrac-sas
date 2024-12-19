@@ -2,21 +2,21 @@
     {
         "title": "Repuestos",
         "description": "En Mecintrac, fabricamos repuestos para maquinaria y equipos industriales, con un alto grado de precisión y calidad. Nuestros repuestos se adaptan a diferentes materiales metálicos y están elaborados con precisión para asegurar un corte y estampado efectivo. Nos enfocamos en cumplir con las especificaciones requeridas y en ofrecer productos duraderos que contribuyan a un proceso de producción eficiente.",
-        "image": "/src/assets/images/services/repuestos.png"
+        "image": "/src/assets/images/services/repuestos.jpg"
     },
     {
         "title": "Moldes",
         "description": "Desarrollamos piezas metálicas de alta precisión combinando diferentes procesos de transformación para entregar productos de calidad, adaptados a las especificaciones de nuestros clientes, cumpliendo con los tiempos y requerimientos acordados.",
-        "image": "/src/assets/images/services/moldes.jpg"
+        "image": "/src/assets/images/services/moldes.jpeg"
     },
     {
         "title": "Troqueles",
         "description": "En Mecintrac fabricamos troqueles utilizando materiales especializados que se ajustan a la aplicación y vida útil requerida. Ofrecemos un servicio integral que abarca desde el diseño completo del proyecto, adaptándonos también a diseños preexistentes, hasta el mecanizado y ensamble de las piezas. Además, incluimos la aplicación de tratamientos térmicos y el pulido final. Nuestra tecnología y experiencia nos permiten garantizar soluciones personalizadas que satisfacen las necesidades específicas de cada cliente.",
-        "image": "/src/assets/images/services/troqueles.png"
+        "image": "/src/assets/images/services/troqueles.jpeg"
     },
     {
         "title": "Desarrollo de Proyectos",
         "description": "Contamos con un equipo especializado que diseña y fabrica equipos o mecanismos que ofrecen soluciones integrales a los desafíos de nuestros clientes. Apoyados en software avanzado, maquinaria tecnológica y una sólida red de proveedores, entregamos proyectos confiables y de alta calidad.",
-        "image": "/src/assets/images/services/desarrollo-de-proyectos.png"
+        "image": "/src/assets/images/services/desarrollo-de-proyectos.jpg"
     }
 ]
