@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Services from "@/data/Services.json";
+import Services from "@/data/services.json";
 import { Image } from 'astro:assets';
 import { images } from "@/components/sections/landing/Services.astro";
 import slugify from "slugify";
@@ -9,7 +9,7 @@ import slugify from "slugify";
 <Layout title="Servicios">
   <div class="section-container flex flex-col items-center">
     <h1 class="text-5xl font-bold tracking-wider text-blue">SERVICIOS</h1>
-    <p class="text-lg max-w-2xl mb-4 text-justify">En Mecintrac, nos especializamos en ofrecer soluciones de alta calidad con un equipo experto y tecnología avanzada, desarrollando productos precisos y eficientes.</p>
+    <p class="text-lg max-w-2xl mb-4 text-justify">En Mecintrac, fabricamos moldes, troqueles, repuestos y maquinaria de alta calidad. Con un equipo experto y tecnología avanzada, desarrollamos soluciones metálicas precisas y eficientes para diversas industrias.</p>
 
     {Services.map((service) => (
       <a href={`/servicios/${slugify(service.title, { lower: true, strict: true })}`} class="w-full max-w-2xl">
