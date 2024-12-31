@@ -186,6 +186,25 @@ content:
           input: src/assets/images/servicios
           output: /src/assets/images/servicios
           path: src/assets/images/servicios
+  - name: soluciones
+    label: Soluciones (landing page)
+    path: src/data/solutionsLanding.json
+    type: file
+    list: true
+    fields:
+      - name: name
+        label: Nombre
+        type: string
+        required: true
+      - name: image
+        label: Imagen
+        type: image
+        required: true
+        options:
+          input: src/assets/images/soluciones
+          output: /src/assets/images/soluciones
+          path: src/assets/images/soluciones
+        
         
         
         
