@@ -33,3 +33,31 @@ content:
         required: true
         options:
           autoresize: true
+  - name: blogs
+    label: Blogs
+    path: src/data/blogs.json
+    type: file
+    list: true
+    fields: 
+      - name: title
+        label: Titulo
+        type: string
+        required: true
+      - name: date
+        label: Fecha
+        type: date
+        required: true
+      - name: image
+        label: Imagen
+        type: image
+        required: true
+          options:
+            input: src/assets/images/blogs
+            output: src/assets/images/blogs
+            path: src/assets/images/blogs
+      - name: text
+        label: Texto
+        type: text
+        required: true
+        options:
+          autoresize: true
