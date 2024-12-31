@@ -21,9 +21,13 @@ content:
             path: src/assets/images/contacto 
       - name: mission
         label: Misión
-        type: string
+        type: text
         required: true
+        options:
+          autoresize: true
       - name: vision
         label: Visión
-        type: string
+        type: text
         required: true
+        options:
+          autoresize: true
