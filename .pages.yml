@@ -1,0 +1,25 @@
+media:
+  input: src/assets/images
+  output: src/assets/images
+content:
+  - name: nosotros
+    label: Nosotros
+    path: src/data/aboutUs.json
+    type: file
+    fields:
+      - name: text
+        label: Texto
+        type: string
+        required: true
+      - name: image
+        label: Imagen
+        type: image
+        required: true
+        options:
+            input: src/assets/images/contacto
+            output: src/assets/images/contacto
+            path: src/assets/images/contacto 
+      - name: mission
+        label: Misión
+        type: string
+        required: true
