@@ -1,70 +1,70 @@
 [
     {
         "name": "Agrofrut",
-        "logo": "/src/assets/images/clients/agrofrut.png"
+        "logo": "/src/assets/images/clientes/agrofrut.png"
     },
     {
         "name": "Alico",
-        "logo": "/src/assets/images/clients/Alico.png"
+        "logo": "/src/assets/images/clientes/Alico.png"
     },
     {
         "name": "Alqueria",
-        "logo": "/src/assets/images/clients/alqueria.webp"
+        "logo": "/src/assets/images/clientes/alqueria.webp"
     },
     {
         "name": "Botero Soto",
-        "logo": "/src/assets/images/clients/botero-soto.png"
+        "logo": "/src/assets/images/clientes/botero-soto.png"
     },
     {
         "name": "Dispromedics",
-        "logo": "/src/assets/images/clients/dispromedics.png"
+        "logo": "/src/assets/images/clientes/dispromedics.png"
     },
     {
         "name": "Empaquetaduras y empaques",
-        "logo": "/src/assets/images/clients/empaquetaduras.png"
+        "logo": "/src/assets/images/clientes/empaquetaduras.png"
     },
     {
         "name": "Forjas Bolivar",
-        "logo": "/src/assets/images/clients/forjas.png"
+        "logo": "/src/assets/images/clientes/forjas.png"
     },
     {
         "name": "Goja",
-        "logo": "/src/assets/images/clients/goja.png"
+        "logo": "/src/assets/images/clientes/goja.png"
     },
     {
         "name": "Grupo Al",
-        "logo": "/src/assets/images/clients/grupoal.png"
+        "logo": "/src/assets/images/clientes/grupoal.png"
     },
     {
         "name": "Ilunion",
-        "logo": "/src/assets/images/clients/ilunion.png"
+        "logo": "/src/assets/images/clientes/ilunion.png"
     },
     {
         "name": "Kent",
-        "logo": "/src/assets/images/clients/kent.png"
+        "logo": "/src/assets/images/clientes/kent.png"
     },
     {
         "name": "Petpack",
-        "logo": "/src/assets/images/clients/petpack.png"
+        "logo": "/src/assets/images/clientes/petpack.png"
     },
     {
         "name": "Proyecciones plásticas",
-        "logo": "/src/assets/images/clients/plasticos.png"
+        "logo": "/src/assets/images/clientes/plasticos.png"
     },
     {
         "name": "Sealco",
-        "logo": "/src/assets/images/clients/sealco.png"
+        "logo": "/src/assets/images/clientes/sealco.png"
     },
     {
         "name": "Talsa",
-        "logo": "/src/assets/images/clients/Talsa.png"
+        "logo": "/src/assets/images/clientes/Talsa.png"
     },
     {
         "name": "Universidad de Antioquia",
-        "logo": "/src/assets/images/clients/uantioquia.png"
+        "logo": "/src/assets/images/clientes/uantioquia.png"
     },
     {
         "name": "Vitagro",
-        "logo": "/src/assets/images/clients/vitagro.png"
+        "logo": "/src/assets/images/clientes/vitagro.png"
     }
 ]

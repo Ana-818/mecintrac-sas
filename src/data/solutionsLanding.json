@@ -1,0 +1,19 @@
+[
+    {
+      "name": "Repuestos",
+      "image": "/src/assets/images/soluciones/repuestos.jpg"
+    },
+    {
+      "name": "Moldes",
+      "image": "/src/assets/images/soluciones/moldes.jpeg"
+    },
+    {
+      "name": "Troqueles",
+      "image": "/src/assets/images/soluciones/troqueles.jpeg"
+    },
+    {
+      "name": "Desarrollo de proyectos",
+      "image": "/src/assets/images/soluciones/proyectos.jpg"
+    }
+  ]
+  

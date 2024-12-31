@@ -2,16 +2,16 @@
     {
         "title": "Diseño",
         "description": "Convertimos las necesidades de nuestros clientes en soluciones precisas, desarrollando la ingeniería y creando modelos computarizados que aseguran un diseño funcional y eficiente.",
-        "image": "/src/assets/images/process/diseño.png"
+        "image": "/src/assets/images/proceso/diseño.png"
     },
     {
         "title": "Desarrollo",
         "description": "Validamos cada detalle en la etapa de diseño y avanzamos hacia el desarrollo del producto, utilizando máquinas CNC y tecnología especializada para garantizar la fabricación con los estándares de calidad más altos.",
-        "image": "/src/assets/images/process/desarrollo.png"
+        "image": "/src/assets/images/proceso/desarrollo.png"
     },
     {
         "title": "Resultado",
         "description": "Entregamos piezas, moldes, troqueles y equipos con un compromiso inquebrantable: calidad y puntualidad en cada proyecto.",
-        "image": "/src/assets/images/process/resultado.png"
+        "image": "/src/assets/images/proceso/resultado.png"
     }
 ]

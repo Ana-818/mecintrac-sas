@@ -3,7 +3,7 @@ import DoubleTitle from "@components/ui/DoubleTitle.astro";
 import ServicesData from "@data/services.json";
 import { Image } from 'astro:assets';
 import slugify from "slugify";
-export const images = import.meta.glob('/src/assets/images/services/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
+export const images = import.meta.glob('/src/assets/images/servicios/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
 ---
 
 <section class="section-container flex flex-col justify-center items-center background-image pb-8">
