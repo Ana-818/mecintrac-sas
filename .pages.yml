@@ -61,3 +61,22 @@ content:
         required: true
         options:
           autoresize: true
+  - name: clientes
+    label: Clientes
+    path: src/data/clientsLogos.json
+    type: file
+    list: true
+    fields:
+      - name: name
+        label: Nombre
+        type: string
+        required: true
+      - name: logo
+        label: Logo
+        type: image
+        required: true
+        options:
+          input: src/assets/images/clientes
+          output: /src/assets/images/clientes
+          path: src/assets/images/clientes
+        
