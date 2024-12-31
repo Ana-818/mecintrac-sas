@@ -162,6 +162,32 @@ content:
         label: Etiqueta
         type: string
         required: true
+  - name: servicios
+    label: Servicios
+    path: src/data/services.json
+    type: file
+    list: true
+    fields: 
+      - name: title
+        label: Nombre
+        type: string
+        required: true
+      - name: description
+        label: Descripción
+        type: text
+        required: true
+        options:
+          autoresize: true
+      - name: image
+        label: Imagen
+        type: image
+        required: true
+        options:
+          input: src/assets/images/servicios
+          output: /src/assets/images/servicios
+          path: src/assets/images/servicios
+        
+        
         
         
         
