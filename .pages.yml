@@ -98,6 +98,26 @@ content:
           input: src/assets/images/contacto
           output: /src/assets/images/contacto
           path: src/assets/images/contacto
+  - name: preguntas_frecuentes
+    label: Preguntas frecuentes
+    path: src/data/faqInfo.json
+    type: file
+    list: true
+    fields:
+      - name: question
+        label: Pregunta
+        type: text
+        required: true
+        options:
+          autoresize: true
+      - name: answer
+        label: Respuesta
+        type: text
+        required: true
+        options:
+          autoresize: true
+        
+    
         
         
         
