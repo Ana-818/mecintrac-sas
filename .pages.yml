@@ -187,7 +187,7 @@ content:
           output: /src/assets/images/servicios
           path: src/assets/images/servicios
   - name: soluciones
-    label: Soluciones (landing page)
+    label: Soluciones (landing)
     path: src/data/solutionsLanding.json
     type: file
     list: true
