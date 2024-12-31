@@ -79,4 +79,25 @@ content:
           input: src/assets/images/clientes
           output: /src/assets/images/clientes
           path: src/assets/images/clientes
+  - name: contacto
+    label: Contacto
+    path: src/data/contactPage.json
+    type: file
+    fields:
+      - name: description
+        label: Texto
+        type: text
+        required: true
+        options:
+          autoresize: true
+      - name: image
+        label: Imagen
+        type: image
+        required: true
+        options:
+          input: src/assets/images/contacto
+          output: /src/assets/images/contacto
+          path: src/assets/images/contacto
+        
+        
         
