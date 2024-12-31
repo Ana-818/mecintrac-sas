@@ -9,8 +9,10 @@ content:
     fields:
       - name: text
         label: Texto
-        type: string
+        type: text
         required: true
+        options:
+          autoresize: true
       - name: image
         label: Imagen
         type: image
