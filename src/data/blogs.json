@@ -1,26 +1,26 @@
 [
-    {
-        "title": "¿Ahora vendemos piezas ya hechas?",
-        "date": "2024-11-25",
-        "image": "/src/assets/images/blogs/blog1.jpg",
-        "text": "En Mecintrac, estamos comprometidos con brindarte soluciones que se adapten a tus necesidades, y por eso hemos ampliado nuestra oferta de productos. Ahora, además de nuestras piezas personalizadas, ponemos a tu disposición una nueva línea de componentes genéricos que ya están diseñados y listos para ser usados.\n\nEntre estos productos, podrás encontrar tornillos, tapas para tanques de gasolina y otros elementos fundamentales para proyectos en diferentes sectores industriales.\n\nEsta iniciativa nace con el objetivo de ofrecerte una opción más rápida y accesible, manteniendo los altos estándares de calidad que caracterizan a Mecintrac. Al comprar nuestras piezas genéricas, tendrás la garantía de durabilidad y precisión que nuestros clientes valoran, pero con la ventaja de disponibilidad inmediata.\n\nAdemás, seguimos atentos a las tendencias del mercado para ampliar nuestro catálogo, asegurándonos de cubrir cada vez más necesidades.\n\nTe invitamos a explorar esta nueva sección y descubrir cómo nuestras soluciones pueden optimizar tus procesos y reducir los tiempos de espera. ¡En Mecintrac, estamos listos para ser tu aliado estratégico en cada proyecto!"
-    },
-    {
-        "title": "Innovación en procesos de manufactura: La revolución digital",
-        "date": "2024-11-24",
-        "image": "/src/assets/images/blogs/blog2.jpg",
-        "text": "La industria manufacturera está experimentando una transformación sin precedentes gracias a la incorporación de tecnologías digitales avanzadas. En Mecintrac, nos mantenemos a la vanguardia de esta revolución, implementando sistemas de automatización y control numérico computarizado (CNC) que nos permiten alcanzar niveles excepcionales de precisión y eficiencia.\n\nLa integración de software de diseño asistido por computadora (CAD) y manufactura asistida por computadora (CAM) ha revolucionado nuestra capacidad para crear piezas complejas con tolerancias mínimas. Esto no solo mejora la calidad de nuestros productos, sino que también reduce significativamente los tiempos de producción y los costos asociados.\n\nNuestro compromiso con la innovación tecnológica se refleja en cada pieza que fabricamos, garantizando que nuestros clientes reciban productos que cumplen con los más altos estándares de calidad y precisión."
-    },
-    {
-        "title": "Sostenibilidad en la industria metalúrgica",
-        "date": "2024-11-23",
-        "image": "/src/assets/images/blogs/blog1.jpg",
-        "text": "En Mecintrac, entendemos que el futuro de la industria metalúrgica está íntimamente ligado a prácticas sostenibles y responsables con el medio ambiente. Por ello, hemos implementado un sistema integral de gestión ambiental que abarca desde la selección de materias primas hasta la disposición final de residuos.\n\nNuestros procesos de producción incorporan tecnologías de bajo consumo energético y sistemas de reciclaje de materiales que nos permiten reducir significativamente nuestra huella de carbono. Además, trabajamos constantemente en la optimización de nuestros métodos de fabricación para minimizar el desperdicio y maximizar el aprovechamiento de recursos.\n\nCreemos firmemente que la sostenibilidad y la excelencia en la manufactura no son mutuamente excluyentes, sino que se complementan para crear un futuro más próspero y responsable."
-    },
-    {
-        "title": "La importancia del control de calidad en la manufactura",
-        "date": "2024-11-22",
-        "image": "/src/assets/images/blogs/blog2.jpg",
-        "text": "El control de calidad es el pilar fundamental que sostiene la reputación de excelencia de Mecintrac. Nuestro departamento de calidad implementa rigurosos protocolos de inspección en cada etapa del proceso productivo, desde la recepción de materias primas hasta la validación final del producto terminado.\n\nUtilizamos equipos de medición de última generación y técnicas avanzadas de metrología para garantizar que cada pieza cumpla con las especificaciones exactas requeridas por nuestros clientes. Este compromiso con la precisión y la calidad nos ha permitido establecer relaciones duraderas con empresas líderes en diversos sectores industriales.\n\nInvertimos continuamente en la capacitación de nuestro personal y en la actualización de nuestros sistemas de control de calidad, porque entendemos que la excelencia no es un destino, sino un viaje continuo de mejora y perfeccionamiento."
-    }
+  {
+    "title": "¿Ahora vendemos piezas ya hechas?",
+    "date": "2003-02-08",
+    "image": "src/assets/images/blogs/blog1.jpg",
+    "text": "En Mecintrac, estamos comprometidos con brindarte soluciones que se adapten a tus necesidades, y por eso hemos ampliado nuestra oferta de productos. Ahora, además de nuestras piezas personalizadas, ponemos a tu disposición una nueva línea de componentes genéricos que ya están diseñados y listos para ser usados.\n\nEntre estos productos, podrás encontrar tornillos, tapas para tanques de gasolina y otros elementos fundamentales para proyectos en diferentes sectores industriales.\n\nEsta iniciativa nace con el objetivo de ofrecerte una opción más rápida y accesible, manteniendo los altos estándares de calidad que caracterizan a Mecintrac. Al comprar nuestras piezas genéricas, tendrás la garantía de durabilidad y precisión que nuestros clientes valoran, pero con la ventaja de disponibilidad inmediata.\n\nAdemás, seguimos atentos a las tendencias del mercado para ampliar nuestro catálogo, asegurándonos de cubrir cada vez más necesidades.\n\nTe invitamos a explorar esta nueva sección y descubrir cómo nuestras soluciones pueden optimizar tus procesos y reducir los tiempos de espera. ¡En Mecintrac, estamos listos para ser tu aliado estratégico en cada proyecto!"
+  },
+  {
+    "title": "Innovación en procesos de manufactura: La revolución digital",
+    "date": "2024-11-24",
+    "image": "src/assets/images/blogs/blog2.jpg",
+    "text": "La industria manufacturera está experimentando una transformación sin precedentes gracias a la incorporación de tecnologías digitales avanzadas. En Mecintrac, nos mantenemos a la vanguardia de esta revolución, implementando sistemas de automatización y control numérico computarizado (CNC) que nos permiten alcanzar niveles excepcionales de precisión y eficiencia.\n\nLa integración de software de diseño asistido por computadora (CAD) y manufactura asistida por computadora (CAM) ha revolucionado nuestra capacidad para crear piezas complejas con tolerancias mínimas. Esto no solo mejora la calidad de nuestros productos, sino que también reduce significativamente los tiempos de producción y los costos asociados.\n\nNuestro compromiso con la innovación tecnológica se refleja en cada pieza que fabricamos, garantizando que nuestros clientes reciban productos que cumplen con los más altos estándares de calidad y precisión."
+  },
+  {
+    "title": "Sostenibilidad en la industria metalúrgica",
+    "date": "2024-11-23",
+    "image": "src/assets/images/blogs/blog1.jpg",
+    "text": "En Mecintrac, entendemos que el futuro de la industria metalúrgica está íntimamente ligado a prácticas sostenibles y responsables con el medio ambiente. Por ello, hemos implementado un sistema integral de gestión ambiental que abarca desde la selección de materias primas hasta la disposición final de residuos.\n\nNuestros procesos de producción incorporan tecnologías de bajo consumo energético y sistemas de reciclaje de materiales que nos permiten reducir significativamente nuestra huella de carbono. Además, trabajamos constantemente en la optimización de nuestros métodos de fabricación para minimizar el desperdicio y maximizar el aprovechamiento de recursos.\n\nCreemos firmemente que la sostenibilidad y la excelencia en la manufactura no son mutuamente excluyentes, sino que se complementan para crear un futuro más próspero y responsable."
+  },
+  {
+    "title": "La importancia del control de calidad en la manufactura",
+    "date": "2024-11-22",
+    "image": "src/assets/images/blogs/blog2.jpg",
+    "text": "El control de calidad es el pilar fundamental que sostiene la reputación de excelencia de Mecintrac. Nuestro departamento de calidad implementa rigurosos protocolos de inspección en cada etapa del proceso productivo, desde la recepción de materias primas hasta la validación final del producto terminado.\n\nUtilizamos equipos de medición de última generación y técnicas avanzadas de metrología para garantizar que cada pieza cumpla con las especificaciones exactas requeridas por nuestros clientes. Este compromiso con la precisión y la calidad nos ha permitido establecer relaciones duraderas con empresas líderes en diversos sectores industriales.\n\nInvertimos continuamente en la capacitación de nuestro personal y en la actualización de nuestros sistemas de control de calidad, porque entendemos que la excelencia no es un destino, sino un viaje continuo de mejora y perfeccionamiento."
+  }
 ]
