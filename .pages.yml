@@ -1,10 +1,10 @@
 media:
-  input: src/assets/images
-  output: src/assets/images
+  input: /src/assets/images
+  output: /src/assets/images
 content:
   - name: nosotros
     label: Nosotros
-    path: src/data/aboutUs.json
+    path: /src/data/aboutUs.json
     type: file
     fields:
       - name: text
@@ -18,9 +18,9 @@ content:
         type: image
         required: true
         options:
-            input: src/assets/images/contacto
-            output: src/assets/images/contacto
-            path: src/assets/images/contacto 
+            input: /src/assets/images/contacto
+            output: /src/assets/images/contacto
+            path: /src/assets/images/contacto 
       - name: mission
         label: Misión
         type: text
@@ -35,7 +35,7 @@ content:
           autoresize: true
   - name: blogs
     label: Blogs
-    path: src/data/blogs.json
+    path: /src/data/blogs.json
     type: file
     list: true
     fields: 
@@ -52,9 +52,9 @@ content:
         type: image
         required: true
           options:
-            input: src/assets/images/blogs
-            output: src/assets/images/blogs
-            path: src/assets/images/blogs
+            input: /src/assets/images/blogs
+            output: /src/assets/images/blogs
+            path: /src/assets/images/blogs
       - name: text
         label: Texto
         type: text
