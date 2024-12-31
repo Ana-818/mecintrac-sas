@@ -116,6 +116,35 @@ content:
         required: true
         options:
           autoresize: true
+  - name: hero_slides
+    label: Carrusel hero
+    path: src/data/heroSlides.json
+    type: file
+    list: true
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descripción
+        type: text
+        required: true
+        options:
+          autoresize: true
+      - name: ctaText
+        label: Texto botón
+        type: string
+        required: true
+      - name: bgImage
+        label: Imagen de fondo
+        type: image
+        required: true
+        options:
+          input: src/assets/images/hero
+          output: /src/assets/images/hero
+          path: src/assets/images/hero
+        
         
     
         
