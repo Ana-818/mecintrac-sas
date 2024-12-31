@@ -23,3 +23,7 @@ content:
         label: Misión
         type: string
         required: true
+      - name: vision
+        label: Visión
+        type: string
+        required: true
