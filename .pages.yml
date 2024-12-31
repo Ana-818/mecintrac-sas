@@ -144,6 +144,25 @@ content:
           input: src/assets/images/hero
           output: /src/assets/images/hero
           path: src/assets/images/hero
+  - name: galeria
+    label: Galería
+    path: src/data/projects.json
+    type: file
+    list: true
+    fields:
+      - name: image
+        label: Imagen
+        type: image
+        required: true
+        options:
+          input: src/assets/images/galeria
+          output: /src/assets/images/galeria
+          path: src/assets/images/galeria
+      - name: tag
+        label: Etiqueta
+        type: string
+        required: true
+        
         
         
     
