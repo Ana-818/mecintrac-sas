@@ -26,5 +26,81 @@
   {
     "image": "/src/assets/images/galeria/lugar2.jpg",
     "tag": "Instalaciones"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto1.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto2.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto3.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto4.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto5.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto6.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto7.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto8.jpg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto9.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto10.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto11.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto12.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto13.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto14.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto15.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto16.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto17.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto18.jpeg",
+    "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/repuesto19.jpeg",
+    "tag": "Repuestos"
   }
 ]
