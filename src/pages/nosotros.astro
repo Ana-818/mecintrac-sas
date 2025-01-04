@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 import AboutUsData from "@/data/aboutUs.json"
 import { Image } from "astro:assets"
-const teamImage = import.meta.glob('/src/assets/images/nosotros/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
+const teamImage = import.meta.glob('/src/assets/images/nosotros/*.{webp,png,jpg,jpeg,WEBP,PNG,JPG,JPEG}', { eager: true }) as Record<string, { default: string }>;
 ---
 <Layout title="Nosotros">
   <div class="section-container">

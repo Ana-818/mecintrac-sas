@@ -5,7 +5,7 @@ import blogData from "@/data/blogs.json";
 import { Image } from "astro:assets";
 import DoubleTitle from "@/components/ui/DoubleTitle.astro";
 
-const images = import.meta.glob('/src/assets/images/blogs/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
+const images = import.meta.glob('/src/assets/images/blogs/*.{webp,png,jpg,jpeg,WEBP,PNG,JPG,JPEG}', { eager: true }) as Record<string, { default: string }>;
 
 export async function getStaticPaths() {
   return blogData.map((blog) => ({

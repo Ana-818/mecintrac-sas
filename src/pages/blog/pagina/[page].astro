@@ -4,7 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import blogData from "@/data/blogs.json";
 import slugify from "slugify";
 
-const images = import.meta.glob('/src/assets/images/blogs/*.{jpg,png,jpeg}', { eager: true }) as Record<string, { default: string }>;
+const images = import.meta.glob('/src/assets/images/blogs/*.{webp,png,jpg,jpeg,WEBP,PNG,JPG,JPEG}', { eager: true }) as Record<string, { default: string }>;
 
 var POSTS_PER_PAGE = 3;
 

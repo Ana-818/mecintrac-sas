@@ -8,7 +8,7 @@ interface Industry {
   name: string,
   image: string
 }
-const images = import.meta.glob('/src/assets/images/soluciones/*.{jpg,png,jpeg, webp}', { eager: true }) as Record<string, { default: string }>;
+const images = import.meta.glob('/src/assets/images/soluciones/*.{webp,png,jpg,jpeg,WEBP,PNG,JPG,JPEG}', { eager: true }) as Record<string, { default: string }>;
 ---
 
 <section class="section-container flex flex-col items-center">

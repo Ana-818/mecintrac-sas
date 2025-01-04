@@ -3,7 +3,7 @@ import { Image } from "astro:assets"
 import Layout from "@/layouts/Layout.astro"
 import { Icon } from 'astro-icon/components'
 import ContactPageData from "@/data/contactPage.json"
-const contactImage = import.meta.glob('/src/assets/images/contacto/*.{jpg,png,jpeg,webp}', { eager: true }) as Record<string, { default: string }>;
+const contactImage = import.meta.glob('/src/assets/images/contacto/*.{webp,png,jpg,jpeg,WEBP,PNG,JPG,JPEG}', { eager: true }) as Record<string, { default: string }>;
 ---
 <Layout title="Contacto">
     <div class="section-container">
