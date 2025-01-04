@@ -102,5 +102,29 @@
   {
     "image": "/src/assets/images/galeria/repuesto19.jpeg",
     "tag": "Repuestos"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel1.png",
+    "tag": "Troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel2.jpeg",
+    "tag": "Troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel3.jpeg",
+    "tag": "Troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel4.jpeg",
+    "tag": "Troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel5.jpeg",
+    "tag": "Troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel6.jpeg",
+    "tag": "Troqueles"
   }
 ]
