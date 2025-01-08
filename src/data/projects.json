@@ -126,5 +126,29 @@
   {
     "image": "/src/assets/images/galeria/troquel6.jpeg",
     "tag": "Troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/proyecto1.jpg",
+    "tag": "Proyectos"
+  },
+  {
+    "image": "/src/assets/images/galeria/proyecto2.jpg",
+    "tag": "Proyectos"
+  },
+  {
+    "image": "/src/assets/images/galeria/proyecto3.jpg",
+    "tag": "Proyectos"
+  },
+  {
+    "image": "/src/assets/images/galeria/proyecto4.jpg",
+    "tag": "Proyectos"
+  },
+  {
+    "image": "/src/assets/images/galeria/proyecto5.jpg",
+    "tag": "Proyectos"
+  },
+  {
+    "image": "/src/assets/images/galeria/proyecto6.jpg",
+    "tag": "Proyectos"
   }
 ]
