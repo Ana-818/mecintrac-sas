@@ -105,27 +105,27 @@
   },
   {
     "image": "/src/assets/images/galeria/troquel1.png",
-    "tag": "Troqueles"
+    "tag": "Moldes y troqueles"
   },
   {
     "image": "/src/assets/images/galeria/troquel2.jpeg",
-    "tag": "Troqueles"
+    "tag": "Moldes y troqueles"
   },
   {
     "image": "/src/assets/images/galeria/troquel3.jpeg",
-    "tag": "Troqueles"
+    "tag": "Moldes y troqueles"
   },
   {
     "image": "/src/assets/images/galeria/troquel4.jpeg",
-    "tag": "Troqueles"
+    "tag": "Moldes y troqueles"
   },
   {
     "image": "/src/assets/images/galeria/troquel5.jpeg",
-    "tag": "Troqueles"
+    "tag": "Moldes y troqueles"
   },
   {
     "image": "/src/assets/images/galeria/troquel6.jpeg",
-    "tag": "Troqueles"
+    "tag": "Moldes y troqueles"
   },
   {
     "image": "/src/assets/images/galeria/proyecto1.jpg",
@@ -150,5 +150,9 @@
   {
     "image": "/src/assets/images/galeria/proyecto6.jpg",
     "tag": "Proyectos"
+  },
+  {
+    "image": "/src/assets/images/galeria/molde2.jpg",
+    "tag": "Moldes y troqueles"
   }
 ]
