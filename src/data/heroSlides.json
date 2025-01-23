@@ -1,13 +1,13 @@
 [
   {
     "title": "MECINTRAC",
-    "description": "En Mecintrac, transformamos metal en soluciones precisas y confiables. Más de 15 años entregando resultados excepcionales, siempre puntuales, siempre a la altura de tus expectativas.",
+    "description": "En Mecintrac, transformamos metal en soluciones precisas y confiables. Más de 15 años entregando resultados excepcionales, puntuales y a la altura de tus expectativas.",
     "ctaText": "Cotiza ya",
     "bgImage": "/src/assets/images/hero/hero-slide-1.jpg"
   },
   {
     "title": "CALIDAD A TIEMPO",
-    "description": "Moldes, troqueles y piezas metálicas diseñadas con precisión, entregadas siempre a tiempo. Confía en Mecintrac, donde la tecnología y la experiencia se unen para impulsar tu éxito.",
+    "description": "Moldes, troqueles y piezas metálicas diseñadas con precisión, entregadas a tiempo. Confía en Mecintrac, donde la tecnología y la experiencia se unen para impulsar tu éxito.",
     "ctaText": "Contactanos",
     "bgImage": "/src/assets/images/hero/hero-slide-2.jpg"
   }
