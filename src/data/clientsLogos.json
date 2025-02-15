@@ -57,7 +57,7 @@
   },
   {
     "name": "Talsa",
-    "logo": "/src/assets/images/clientes/Talsa.png"
+    "logo": "/src/assets/images/clientes/talsa.webp"
   },
   {
     "name": "Universidad de Antioquia",
@@ -66,5 +66,9 @@
   {
     "name": "Vitagro",
     "logo": "/src/assets/images/clientes/vitagro.png"
+  },
+  {
+    "name": "Prisma coffee tech",
+    "logo": "/src/assets/images/clientes/prisma.png"
   }
 ]
