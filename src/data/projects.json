@@ -154,5 +154,13 @@
   {
     "image": "/src/assets/images/galeria/molde2.jpg",
     "tag": "Moldes y troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/troquel-celsa.jpeg",
+    "tag": "Moldes y troqueles"
+  },
+  {
+    "image": "/src/assets/images/galeria/diseño-celsa.jpeg",
+    "tag": "Máquinas e instalaciones"
   }
 ]
